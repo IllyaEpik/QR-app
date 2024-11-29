@@ -1,0 +1,21 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}doc{% endblock %}</title>
+        {% block link %} {% endblock %}
+    </head>
+    <body>
+        <header>
+            <a href="/">home</a>
+            {% block user %}
+            <a href="{% url 'auth' %}">login</a>
+            {% endblock %}
+            
+            <a href="">my QR-cods</a>
+            <a href="">contacts</a>
+            <a href="">create QR-cod</a>
+        </header>
+        {% block content %} {% endblock %}
+    </body>
+</html>
