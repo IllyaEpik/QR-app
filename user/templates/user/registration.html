@@ -7,12 +7,20 @@
 <a href="{% url 'auth' %}">authorization </a>
 {% endblock %}
 {% block content %}
-<h1>registration</h1>
-<!-- <main>
-    <input type="text" name="">
-    <input type="password" name="" >
-    <input type="password">
-    <input type="email">
-    <button class="button">Continue</button>
-</main> -->
+<main>
+    <section class="registration">
+        <h2>Registration</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Surname" />
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+    </section>
+</main>
 {% endblock %}

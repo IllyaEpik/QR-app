@@ -7,7 +7,7 @@ h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
-    background:linear-gradient(45deg, lightblue, white);
+    background:linear-gradient(45deg, #9AB7FF, white);
     padding: 20px;
 }
 .cont{

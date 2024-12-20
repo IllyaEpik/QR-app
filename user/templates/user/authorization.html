@@ -1,15 +1,30 @@
 {% extends 'base.html' %}
-<!-- {% block link  %} {% load static %}<link rel="stylesheet" href="{% static 'user/style.css'%}"> {% endblock %} -->
+{% block link  %} {% load static %}<link rel="stylesheet" href="{% static 'user/style.css'%}"> {% endblock %}
 {% block user %}
 <header>
     <a href="{% url 'reg' %}">Registration </a>
 </header>
 {% endblock %}
 {% block content %}
-<h1>authorization</h1>
-<!-- <main>
-    <input type="text" name="">
-    <input type="password" name="" >
-    <button class="button">Continue</button>
-</main> -->
+    <!-- <header>
+        <nav>
+            <a href="#" class="logo">Registration</a>
+            <div class="menu">
+                <a href="#">contacts</a>
+                <a href="#">home</a>
+            </div>
+        </nav>
+    </header> -->
+    <main>
+        <section class="authorization">
+            <h2>Authorization</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Name" />
+                    <input type="password" placeholder="Password" />
+                </div>
+                <button type="submit">Confirm</button>
+            </form>
+        </section>
+    </main>
 {% endblock %}
