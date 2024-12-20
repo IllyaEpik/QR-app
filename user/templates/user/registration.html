@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
-{% block link  %} {% load static %}<link rel="stylesheet" href="{% static 'user/style1.css'%}"> {% endblock %}
+{% load static %}
+{% block link  %}
+ <link rel="stylesheet" href="{% static 'user/style1.css'%}"> 
+{% endblock %}
 {% block user %}
 <a href="{% url 'auth' %}">authorization </a>
 {% endblock %}

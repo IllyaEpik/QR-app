@@ -7,13 +7,11 @@ h1{
 header{
     display: flex;
     justify-content: center;
-    color: white;
-    background: pink;
     text-align: center;
     justify-content: space-evenly;
 }
-main{
-
+body{
+    background:linear-gradient(45deg, lightblue, white);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,7 +19,6 @@ main{
     height: 100px;
     align-items: center;
     padding: 100px;
-    /* background-color: palegreen; */
 }
 .button{
     display: flex;
@@ -29,7 +26,5 @@ main{
     height: 100px;
     align-items: center;
     background-color: white;
-}
-*{
-    background:linear-gradient(45deg, lightblue, white);
-}
+ }  
+

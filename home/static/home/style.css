@@ -12,7 +12,7 @@ header{
     text-align: center;
     justify-content: space-evenly;
 }
-main{
+body{
 
     display: flex;
     justify-content: center;
@@ -21,11 +21,12 @@ main{
     height: 100px;
     align-items: center;
     padding: 100px;
+    background:linear-gradient(45deg, lightblue, white);
     /* background-color: palegreen; */
 }
-*{
+/* *{
     background:linear-gradient(45deg, lightblue, white);
-} 
+}  */
 .noob{
     display: flex;
     text-align: center;
