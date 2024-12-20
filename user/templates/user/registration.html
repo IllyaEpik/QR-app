@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block link  %}
- <link rel="stylesheet" href="{% static 'user/style1.css'%}"> 
+<!-- {% block link  %}
+ <link rel="stylesheet" href="{% static 'user/style1.css'%}">  -->
 {% endblock %}
 {% block user %}
 <a href="{% url 'auth' %}">authorization </a>
 {% endblock %}
 {% block content %}
 <h1>registration</h1>
-<main>
+<!-- <main>
     <input type="text" name="">
     <input type="password" name="" >
     <input type="password">
     <input type="email">
     <button class="button">Continue</button>
-</main>
+</main> -->
 {% endblock %}

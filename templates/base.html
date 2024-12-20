@@ -1,9 +1,11 @@
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}doc{% endblock %}</title>
         {% block link %} {% endblock %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
         <header>
@@ -13,7 +15,7 @@
             {% endblock %}
             
             <a href="">my QR-cods</a>
-            <a href="">contacts</a>
+            <a href="{% url 'contacts' %}">contacts</a>
             <a href="">create QR-cod</a>
         </header>
         {% block content %} {% endblock %}
