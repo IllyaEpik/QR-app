@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #9AB7FF, #ffffff);
+    color: #333;
+}
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+header .menu {
+    display: flex;
+    gap: 20px;    
+}
+
+header .menu a {
+    margin-left: 300px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+header .menu a:last-child {
+    color: #ff4b4b;
+}
+
+header .menu a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: Times, Times, serif;
+}
+
+.button button {
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #D8E3FF;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background-color: #B6CBFF;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form img {
+    width: 200px;
+    margin: 20px;
+}
+
+.qr-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.qr-form img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-create {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-create:hover {
+    background-color: #218838;
+}
+
+/* Кнопка Download */
+.btn-download {
+    background-color: #17a2b8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #117a8b;
+}
+
+form button:nth-child(2):hover {
+    background-color: #117a8b;
+}
