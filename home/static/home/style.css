@@ -1,0 +1,43 @@
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 250px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    justify-content: space-evenly;
+}
+body{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    height: 100px;
+    align-items: center;
+    padding: 100px;
+    background:linear-gradient(45deg, lightblue, white);
+    /* background-color: palegreen; */
+}
+/* *{
+    background:linear-gradient(45deg, lightblue, white);
+}  */
+.noob{
+    display: flex;
+    text-align: center;
+    height: 0;
+}
+.standart{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.pro{
+    display: flex;
+    text-align: center;
+    flex-direction: row-reverse;
+}

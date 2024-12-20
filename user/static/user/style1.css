@@ -1,0 +1,33 @@
+/* h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 250px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    justify-content: space-evenly;
+}
+main{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    height: 100px;
+    align-items: center;
+    padding: 100px;
+    
+}
+.button{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: white;
+} */
+
+
