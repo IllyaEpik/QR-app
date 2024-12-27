@@ -14,4 +14,8 @@ body{
     text-align: center;
     padding: 32px;
 }
+img{
+    width: 100px;
+    height: 100px;
+}
 

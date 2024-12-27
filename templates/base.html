@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}doc{% endblock %}</title>
         {% block link %} {% endblock %}
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'style/style.css' %}">
     </head>
     <body>
-        <header>
+        <!-- <header>
+            <img src="" alt="">
             <a href="/">home</a>
             {% block user %}
             <a href="{% url 'auth' %}">login</a>
@@ -16,8 +17,27 @@
             
             <a href="">my QR-cods</a>
             <a href="{% url 'contacts' %}">contacts</a>
-            <a href="">create QR-cod</a>
+            <a href="{% url 'qr_cods' %}">create QR-cod</a>
+        </header> -->
+        <header>
+            <nav>
+                {% if name  %}
+                    <li class="logo">{{ name }}</li>
+                
+                {% else %}
+                    <a href="{% url 'reg' %}">login</a>
+                {% endif %}
+                <div class="menu">
+                    <a href="">home</a>
+                    <a href="{% url 'qr_cods' %}">create QR-code</a>
+                    <a href="{% url 'contacts' %}">contacts</a>
+                    <a href="" class="logout">logout</a>
+                </div>
+            </nav>
         </header>
-        {% block content %} {% endblock %}
+        {% block content %}
+         
+
+        {% endblock %}
     </body>
 </html>

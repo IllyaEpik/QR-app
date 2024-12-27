@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import view_home
 from contacts.views import view_contacts
+from QR_cods.views import render_qr_cods
 # from user.urls import 
 
 
@@ -25,5 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view=view_home),
     path('user/',include("user.urls")),
-    path('/contacts', view=view_contacts, name="contacts")
+    path('/contacts', view=view_contacts, name="contacts"),
+    path('qr_cods/', view=render_qr_cods, name="qr_cods")
 ]
