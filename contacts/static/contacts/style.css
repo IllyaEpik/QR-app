@@ -5,10 +5,14 @@
 h1{
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-top: 3px solid #000000;
+    gap:23px;
+
 }
-body{
+main{
     background:linear-gradient(45deg, #9AB7FF, white);
     padding: 20px;
+    
 }
 .cont{
     text-align: center;

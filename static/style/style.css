@@ -3,5 +3,17 @@ a{
 }
 body{
     background: linear-gradient(to right, #9AB7FF, #ffffff);
+    /* border-top: 3px solid #000000; */
 
+}
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 23px;
+    height: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* border-top: 3px solid #000000; */
+}
+.login{
+    display: flex;
 }

@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #9AB7FF, #ffffff);
     color: #333;
+    border-top: 3px solid #000000;
 }
 
 header {
@@ -44,6 +45,7 @@ header .menu a:hover {
 main {
     padding: 30px;
     text-align: center;
+    
 }
 
 h2 {

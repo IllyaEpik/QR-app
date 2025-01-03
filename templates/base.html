@@ -19,16 +19,17 @@
             <a href="{% url 'contacts' %}">contacts</a>
             <a href="{% url 'qr_cods' %}">create QR-cod</a>
         </header> -->
-        <header>
-            <nav>
-                {% if name  %}
+        {% if name  %}
                     <li class="logo">{{ name }}</li>
                 
                 {% else %}
-                    <a href="{% url 'reg' %}">login</a>
+                    <a href="{% url 'reg' %}" class="login">login</a>
                 {% endif %}
+        <header>
+            <nav>
+                
                 <div class="menu">
-                    <a href="">home</a>
+                    <a href="/">home</a>
                     <a href="{% url 'qr_cods' %}">create QR-code</a>
                     <a href="{% url 'contacts' %}">contacts</a>
                     <a href="" class="logout">logout</a>
