@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link%}
+<link rel="stylesheet" href="{% static 'QR-cods/my_QR_cods.css' %}">
+{% endblock %}
+{% block content %}
+
+<body>
+    <header>
+        </header>
+    <main>
+        <h1>my QR-codes</h1>
+        <section class="qr-codes">
+            <div class="qr-card">
+                <img src="{% static 'images/qr_code.png' %}" alt="QR code">
+                <p>QR-code for web-site</p>
+            </div>
+            </section>
+    </main>
+    <a href="">create_QR_cods</a>
+</body>
+{% endblock %}

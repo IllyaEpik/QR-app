@@ -1,0 +1,50 @@
+body {
+    font-family: sans-serif;
+    background-color: lightblue;
+}
+
+header {
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.qr-codes {
+    display: flex;
+    justify-content: space-around;
+    border: 2px dotted blue;
+    padding: 20px;
+}
+
+.qr-card {
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+a{
+    
+    display: flex;
+    justify-content: center;
+    color: blue
+}

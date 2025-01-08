@@ -1,19 +1,10 @@
 {% extends 'base.html' %}
-  
-
+{% load static %}
+{% block link%}
+<link rel="stylesheet" href="{% static 'QR-cods/create_QR_cods.css' %}">
+{% endblock %}
 {% block content %}
-        <!-- <header>
-            <nav>
-                <a href="#" class="logo">Illya</a>
-                <div class="menu">
-                    <a href="#">home</a>
-                    <a href="#">create QR-code</a>
-                    <a href="#">contacts</a>
-                    <a href="#" class="logout">logout</a>
-                </div>
-            </nav>
-        </header> -->
-        <main>
+    <main>
         <section class="button">
             <h2>Create QR-cods</h2>
             <button>What is the Qr-code for?</button>

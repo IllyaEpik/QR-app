@@ -1,46 +1,3 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #9AB7FF, #ffffff);
-    color: #333;
-    border-top: 3px solid #000000;
-}
-
-header {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #000;
-}
-
-header .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-}
-
-header .menu {
-    display: flex;
-    gap: 20px;    
-}
-
-header .menu a {
-    margin-left: 300px;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-header .menu a:last-child {
-    color: #ff4b4b;
-}
-
-header .menu a:hover {
-    text-decoration: underline;
-}
 
 main {
     padding: 30px;
@@ -132,4 +89,9 @@ form img {
 
 form button:nth-child(2):hover {
     background-color: #117a8b;
+}
+.create-QR-cods{
+    background-color:  #21A0DF;
+    border: solid #21A0DF 1px;
+    border-radius: 100px;
 }

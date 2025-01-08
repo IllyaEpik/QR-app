@@ -1,11 +1,21 @@
 {% extends "base.html" %}
-{% block link  %} {% load static %}<link rel="stylesheet" href="{% static 'home/style.css'%}"> {% endblock %}
+{% load static %}
+{% block link  %} <link rel="stylesheet" href="{% static 'home/style.css'%}"> {% endblock %}
 {% block content %}
-<body>
-    <h1>Qr-app</h1>
-    <div class = "noob">free</div>
-    <div class="standart">standart</div>
-    <div class="pro">pro</div>
-</body>
+    <main>
+        <h1>QR-app</h1>
+        <section class="plans">
+            <div class="plan">
+                <h2>Free</h2>
+                <p>cost: 0$/month</p>
+                <p>max-count QR: 1</p>
+                <button>current</button>
+                <button>go to description</button>
+            </div>
+            <div class="plan">
+                </div>
+        </section>
+    </main>
+
 
 {% endblock %}

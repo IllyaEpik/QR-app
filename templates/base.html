@@ -3,37 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}doc{% endblock %}</title>
+        <title>{% block title %}QR-cods{% endblock %}</title>
         {% block link %} {% endblock %}
-        <link rel="stylesheet" href="{% static 'style/style.css' %}">
+        <link rel="stylesheet" href="{% static 'style/style.css' %}?v=1">
+        <link rel="shortcut icon" href="{% static 'images/icon.png' %}">
     </head>
     <body>
-        <!-- <header>
-            <img src="" alt="">
-            <a href="/">home</a>
-            {% block user %}
-            <a href="{% url 'auth' %}">login</a>
-            {% endblock %}
-            
-            <a href="">my QR-cods</a>
-            <a href="{% url 'contacts' %}">contacts</a>
-            <a href="{% url 'qr_cods' %}">create QR-cod</a>
-        </header> -->
-        {% if name  %}
-                    <li class="logo">{{ name }}</li>
-                
-                {% else %}
-                    <a href="{% url 'reg' %}" class="login">login</a>
-                {% endif %}
         <header>
+            <div class="name">
+                {% block user %}
+                    {% if name %}
+                        <p class="logo"><img src="{% static 'images/icon.png' %}" alt="" class="icon">{{ name }}</p>
+                    {% else %}
+                        <a href="{% url 'reg' %}" class="login">login</a>
+                    {% endif %}
+                {% endblock %}
+            </div>
             <nav>
-                
-                <div class="menu">
-                    <a href="/">home</a>
-                    <a href="{% url 'qr_cods' %}">create QR-code</a>
-                    <a href="{% url 'contacts' %}">contacts</a>
-                    <a href="" class="logout">logout</a>
-                </div>
+                <div class="home"><a href="/">home</a></div>
+                <div class="create-QR-cods"><a href="{% url 'create_qr_cods' %}">create QR-code</a></div>
+                <div class="my-QR-cods"><a href="{% url 'my_qr_cods' %}">my QR-code</a></div>
+                <div class="contacts"><a href="{% url 'contacts' %}">contacts</a></div>
+                <a href="" class="logout">logout</a>
             </nav>
         </header>
         {% block content %}

@@ -1,26 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
-<!-- {% block link  %}
- <link rel="stylesheet" href="{% static 'user/style1.css'%}">  -->
-{% endblock %}
+{% block link  %}
+ <link rel="stylesheet" href="{% static 'user/style1.css'%}"> 
+{% endblock %}/
 {% block user %}
 <a href="{% url 'auth' %}">authorization </a>
 {% endblock %}
 {% block content %}
-<main>
-    <section class="registration">
-        <h2>Registration</h2>
-        <form method="post">
-            <div class="input-group">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Surname" />
-            </div>
-            <div class="input-group">
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-            </div>
-            <button type="submit">Continue</button>
-        </form>
-    </section>
-</main>
+    <form method="post">
+        <h1>Registration</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Surname" />
+        </div>
+        <div class="input-group">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+        </div>
+        <button type="submit">Continue</button>
+    </form>
 {% endblock %}

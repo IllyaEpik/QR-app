@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-{% block link  %} <link rel="stylesheet" href="{% static 'contacts/style.css' %}"> {% endblock %}
+{% block link  %} 
+<link rel="stylesheet" href="{% static 'contacts/style.css' %}"> 
+<script defer src="{% static 'contacts/script.js' %}"></script>
+{% endblock %}
+
 {% block content %}
-<h1>Contacts</h1>
-<body>
-    <main>
-        <form action="" class="cont">
-    <input type="text" placeholder="write your message">
-    
-    <button>Send</button>
-    </main>
-    
-</form>
-</body>
+<main>
+    <form action="" class="cont">
+        <h1>Contacts</h1>
+        <textarea name="text" placeholder="write your message"></textarea>
+        <h2>Rating</h2>
+        <p id="Rating"></p>
+        <button><span class="button">Send</span></button>
+        
+    </form>
+</main>
 
 {% endblock %}  
