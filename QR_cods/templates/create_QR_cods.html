@@ -4,20 +4,22 @@
 <link rel="stylesheet" href="{% static 'QR-cods/create_QR_cods.css' %}">
 {% endblock %}
 {% block content %}
+<h1>Create QR-cods</h1>
     <main>
-        <section class="button">
-            <h2>Create QR-cods</h2>
+        <div class="buttons">
             <button>What is the Qr-code for?</button>
             <button>What color you want?</button>
-            <button>Choose design?</button>
+            <button>Choose desigh?</button>
             <button>Set icon?</button>
-        </section class="right-content">
-       <form class="qr-form">
-        <img src="images/img.png" alt="QR Code">
-        <div class="button-group">
-            <button class="btn-create" type="submit">create</button>
-            <button class="btn-download" type="button">download</button>
         </div>
-       </form>
+        <div class="box-img">
+            <div class="position">
+                <img src="{% static 'images/qr_code.png' %}" alt="" class="img">
+                <div class="box-for-buttons">
+                    <button class="create">create</button>
+                    <button class="download">download</button>
+                </div>
+            </div>
+        </div>
     </main>
 {% endblock %}

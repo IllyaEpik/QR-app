@@ -1,0 +1,89 @@
+*{
+    font-size: 30px;
+}
+  
+  
+
+
+.content {
+text-align: center;
+margin: 20px auto;
+}
+
+
+.plans {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+.color-div{
+    background-color: #CDF5F699; 
+    margin: 0px;
+    padding: 0px;
+    border-radius: 20px;
+}
+
+.plan {
+background-color: rgba(255, 255, 255, 0.5);
+border: 1px solid #ccc;
+display: flex;
+flex-direction: column;
+gap: 17px;
+border-radius: 21px;
+/* padding: 20px; */
+width: 231px;
+height: 492px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.free-color-div{
+    background-color: #A6FBFF99;
+}
+/* 8CF2F8 */
+.standart-color-div{
+    background-color: #8CF2F899;
+}
+.pro-color-div{
+    background-color: #83F9FFB3;
+}
+.plan h2 {
+margin-bottom: 10px;
+}
+h1{
+    font-size: 60px;
+}
+.plan p {
+margin: 5px 0px;
+}
+
+.plan span {
+font-weight: bold;
+padding: 20px 50px;
+}
+
+.cross {
+color: red;
+}
+
+.check {
+color: green;
+}
+
+button {
+margin-top: 10px;
+padding: 8px 12px;
+border-radius: 4px;
+background-color: rgba(255, 255, 255, 0.2);
+color: #0015FF;
+cursor: pointer;
+border-radius: 90px;
+}
+
+button.current {
+background-color: #9AB7FFB3;
+cursor: default;
+}
+
+button:hover:not(.current) {
+border-color: #83F9FF;
+background-color: #83F9FF33;
+}

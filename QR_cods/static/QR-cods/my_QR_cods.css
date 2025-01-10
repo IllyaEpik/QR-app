@@ -17,7 +17,9 @@ nav li {
     display: inline-block;
     margin-right: 10px;
 }
-
+h1{
+    font-size: 60px;
+}
 .active {
     font-weight: bold;
 }
@@ -30,21 +32,45 @@ main {
 .qr-codes {
     display: flex;
     justify-content: space-around;
-    border: 2px dotted blue;
+    /* border: 2px dotted blue; */
     padding: 20px;
+    
 }
 
 .qr-card {
     text-align: center;
+    height: 298px;
+    width: 247px;
+    font-size: 30;
+    background-color: rgba(255, 255, 255, 0.5);
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    
 }
-
+.url-to-create{
+    color: 3700FF;
+    font-size: 30px;
+}
+.text-for-QR-code{
+    width: 247;
+}
+.my-QR-code{
+    width: 198;
+    height: 189.09;
+}
 img {
     width: 100px;
     height: 100px;
 }
 a{
-    
     display: flex;
     justify-content: center;
     color: blue
+}
+.my-QR-cods{
+    background-color:  #21A0DF;
+    border: solid #21A0DF 1px;
+    border-radius: 100px;
 }

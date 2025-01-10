@@ -24,7 +24,10 @@
                 <div class="create-QR-cods"><a href="{% url 'create_qr_cods' %}">create QR-code</a></div>
                 <div class="my-QR-cods"><a href="{% url 'my_qr_cods' %}">my QR-code</a></div>
                 <div class="contacts"><a href="{% url 'contacts' %}">contacts</a></div>
-                <a href="" class="logout">logout</a>
+                {% if name %}
+                        <p class="logo"><img src="{% static 'images/icon.png' %}" alt="" class="icon">{{ name }}</p>
+                        <a href="" class="logout">logout</a>
+                {% endif %}
             </nav>
         </header>
         {% block content %}

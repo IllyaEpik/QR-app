@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block link  %} <link rel="stylesheet" href="{% static 'subscriptions/style.css'%}"> {% endblock %}
+{% block content %}
+
+
+  
+    <div class="content">
+      <h1>subscriptions</h1>
+  
+      <div class="plans">
+       
+  
+        
+        <div class="plan">
+            <div class="color-div">
+                <h2>different</h2>
+            </div>
+            <p>max QR-codes:</p>
+            <p>limit using QR:</p>
+            <p>custom:</p>
+            <p>price:</p>
+            <p>time create:</p>
+        </div>
+  
+        <div class="plan">
+            <div class="color-div free-color-div">
+                <h2>free</h2>
+            </div>
+          <p>1</p>
+          <p>6/mouth</p>
+          <p>❌</p>
+          <p>free</p>
+          <p>slow</p>
+          <button class="current">current</button>
+        </div>
+        <div class="plan">
+            <div class="color-div standart-color-div">
+                <h2>standart</h2>
+            </div>
+          <p>10</p>
+          <p>infinity time</p>
+          <p>✔️</p>
+          <p>2$/mouth</p>
+          <p>medium</p>
+          <button>confirm</button>
+        </div>
+        <div class="plan">
+            <div class="color-div pro-color-div">
+                <h2>pro</h2>
+            </div>
+          <p>100</p>
+          <p>infinity time</p>
+          <p>✔️</p>
+          <p>10$/mouth</p>
+          <p>fast</p>
+          <button>confirm</button>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

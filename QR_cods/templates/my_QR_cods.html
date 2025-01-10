@@ -6,17 +6,23 @@
 {% block content %}
 
 <body>
-    <header>
-        </header>
     <main>
         <h1>my QR-codes</h1>
         <section class="qr-codes">
             <div class="qr-card">
-                <img src="{% static 'images/qr_code.png' %}" alt="QR code">
-                <p>QR-code for web-site</p>
+                <img src="{% static 'images/qr_code.png' %}" alt="QR code" class="my-QR-code">
+                <p class="text-for-QR-code">QR-code for web-site</p>
             </div>
-            </section>
+            <div class="qr-card">
+                <img src="{% static 'images/qr_code.png' %}" alt="QR code" class="my-QR-code">
+                <p class="text-for-QR-code">QR-code for web-site</p>
+            </div>
+            <div class="qr-card">
+                <img src="{% static 'images/qr_code.png' %}" alt="QR code" class="my-QR-code">
+                <p class="text-for-QR-code">QR-code for web-site</p>
+            </div>
+        </section>
     </main>
-    <a href="">create_QR_cods</a>
+    <a href="{% url 'create_qr_cods' %}" class="url-to-create">create QR-code</a>
 </body>
 {% endblock %}

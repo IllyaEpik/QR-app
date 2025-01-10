@@ -1,97 +1,66 @@
 
-main {
-    padding: 30px;
-    text-align: center;
-    
-}
 
-h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: Times, Times, serif;
-}
-
-.button button {
+button {
     display: block;
     margin: 10px;
     padding: 10px 20px;
-    background-color: #D8E3FF;
+    background-color: rgba(255, 255, 255, 0.5);
     color: #000;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
+    border-radius: 25px;
+    
 }
-
-.button button:hover {
-    background-color: #B6CBFF;
-}
-
-form {
-    margin-top: 20px;
-}
-
-form img {
-    width: 200px;
-    margin: 20px;
-}
-
-.qr-form {
+main{
     display: flex;
+    flex-direction: row;
+}
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-
-.qr-form img {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
-
-.button-group {
-    display: flex;
-    gap: 10px;
-}
-
-.btn-create {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-create:hover {
-    background-color: #218838;
-}
-
-
-.btn-download {
-    background-color: #17a2b8;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-download:hover {
-    background-color: #117a8b;
-}
-
-form button:nth-child(2):hover {
-    background-color: #117a8b;
+    gap: 86px;
 }
 .create-QR-cods{
     background-color:  #21A0DF;
     border: solid #21A0DF 1px;
     border-radius: 100px;
+}
+.box-for-buttons{
+    display: flex;
+    flex-direction: row;
+}
+.box-img{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 333px;
+    height: 480px;
+    gap: 24px;
+    padding: 60px 75px;
+    /* flex-direction:column;
+    display: flex; */
+    /* justify-content:end; */
+    /* align-items:baseline; */
+}
+.create{
+    background-color: #ACE8A4;
+    border: black solid 1px;
+    border-radius: 16px;
+    color: white;
+}
+.download{
+    background-color: #00C8FF;
+    border: black solid 1px;
+    border-radius: 16px;
+    color: white;
+    
+}
+.position{
+    flex-direction:column;
+    display: flex;
 }
