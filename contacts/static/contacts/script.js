@@ -5,6 +5,7 @@ for (let count of [1,2,3,4,5,6,7,8,9,10]){
     element.textContent = '★'
     element.id = `star-${count}`
     element.className = 'star'
+    element.style.fontSize = 30
     element.addEventListener("click", () => {
         
         for (let count of [1,2,3,4,5,6,7,8,9,10]){

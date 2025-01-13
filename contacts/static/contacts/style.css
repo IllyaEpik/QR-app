@@ -21,6 +21,9 @@ button{
     font-size: 30;
     color: #99A36E;
 }
+.star{
+    font-size: 30px;
+}
 button{
     cursor: pointer;
 }
