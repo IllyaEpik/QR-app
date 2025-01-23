@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin-top: 50px;
 }
 
 h1{
     text-align: center;
     font-size: 60;
+    margin-top: 20px;
 }
 .plan {
     display: flex;

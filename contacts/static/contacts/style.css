@@ -14,7 +14,6 @@ h2{
 }
 button{
     background-color: rgba(255,255,255,0.5);
-    /* opacity: 50%; */
     border: none;
     width: 344px;
     height: 73px;
@@ -26,7 +25,17 @@ button{
 }
 button{
     cursor: pointer;
+    border-radius: 30px;
 }
+
+.button:hover {
+    background-color: grey;
+}
+
+.button1:hover {
+    background-color: lightgray;
+}
+
 span{
     cursor: pointer;
 }
@@ -49,3 +58,62 @@ form{
     gap: 32px;
     flex-direction: column;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e0ecff;
+  }
+  
+  .footer {
+    background: linear-gradient(to right #9AB7FF, #ffffff);
+    padding: 20px 10%;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-color: black;
+    border-bottom-color: black;
+    margin-top: 150px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+  }
+  
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  .contact-info {
+    text-align: right;
+    font-size: 30px;
+    color: #333;
+    margin-left: 700px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  .contact-info a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  

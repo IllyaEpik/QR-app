@@ -50,9 +50,23 @@ main {
     
 }
 .url-to-create{
-    color: 3700FF;
-    font-size: 30px;
+    color: black;
+    font-size: 50px;
+    background-color: #95B4E2;
+    margin-left: 600px;
+    border-radius: 20px;
+    border-color: none;
 }
+
+.url-to-create:hover {
+    background-color: #7BA4E0;
+}
+
+/* /* .create-qr-code {
+    background-color: #95B4E2;
+    margin-left: 50px; 
+
+} */
 .text-for-QR-code{
     width: 247;
 }
