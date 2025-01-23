@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view=view_home),
     path('user/',include("user.urls")),
-    path('/contacts', view=view_contacts, name="contacts"),
+    path('contacts', view=view_contacts, name="contacts"),
     path('QR_cods/',include("QR_cods.urls")),
     path('subscriptions/',view_subscriptions)
     # path('qr_cods/', view=render_qr_cods, name="create_qr_cods"),
