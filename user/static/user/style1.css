@@ -33,3 +33,9 @@ input{
     display: flex;
     
 }
+p{
+    color: red;
+    display: flex;
+    font-size: 40px;
+    text-align: center;
+}

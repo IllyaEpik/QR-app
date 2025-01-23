@@ -11,13 +11,15 @@
         {% csrf_token %}
         <h1>Registration</h1>
         <div class="input-group">
-            <input type="text" placeholder="Name" name="name" />
-            <input type="text" placeholder="Surname" name="username" />
+            <input type="text" placeholder="username" name="username" />
+            <input type="email" placeholder="email" name="email" />
         </div>
         <div class="input-group">
-            <input type="email" placeholder="Email" name="email"/>
             <input type="password" placeholder="Password" name="password" />
+            <input type="password" placeholder="confirm_password" name="confirm_password"/>
         </div>
+        <p>{{ add }}</p>
         <button type="submit">Continue</button>
     </form>
+    
 {% endblock %}

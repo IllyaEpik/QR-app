@@ -7,8 +7,9 @@
     
     <form>
         <h1>Authorization</h1>
-        <input type="text" placeholder="Name" />
-        <input type="password" placeholder="Password" />
+        <input type="text" placeholder="username" name="username"/>
+        <input type="password" placeholder="Password" name="password" />
         <button type="submit">Confirm</button>
     </form>
+    <p>{{ error }}</p>
 {% endblock %}
