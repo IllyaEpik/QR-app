@@ -34,7 +34,7 @@ header{
 }
 nav{
     gap: 30px;
-    display: flex;
+    display: flex; 
     /* justify-content: flex-end; */
 
     font-size: 30;
