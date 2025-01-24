@@ -4,8 +4,8 @@
     <a href="{% url 'reg' %}">Registration </a>
 {% endblock %}
 {% block content %}
-    
-    <form>
+    <form method="post">
+        {% csrf_token %}
         <h1>Authorization</h1>
         <input type="text" placeholder="username" name="username"/>
         <input type="password" placeholder="Password" name="password" />

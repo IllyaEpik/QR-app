@@ -53,7 +53,10 @@ main {
     color: black;
     font-size: 50px;
     background-color: #95B4E2;
-    margin-left: 600px;
+    position: relative;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%);
     border-radius: 20px;
     border-color: none;
 }

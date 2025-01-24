@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
 # Create your views here.
 
@@ -12,7 +12,7 @@ def authorization(request):
             user = authenticate(request, username= username, password = password)
             if user:
                 login(request, user)
-                return redirect('welcome')
+                return redirect('/')
             else:
                 error = "Username or password is not correct"
         
@@ -25,16 +25,18 @@ def registration(request):
     
             username= request.POST.get("username")
             password= request.POST.get("password")
+            confirm_password = request.POST.get("confirm_password")
             email = request.POST.get("email")
-            print(username,password)
-            User.objects.create_user( username=username, password=password,email=email)
+            if password == confirm_password:
+                User.objects.create_user( username=username, password=password,email=email)
+            else:
+                add = "passwords don't match"
         except IntegrityError:
 
             add = "Username already excists"
     return render(request,template_name= "user/registration.html", context={"add": add})
 
-def logout(request):
-    if request.user:
-        logout(request)
-        return redirect('login')
+def logout_user(request):
+    logout(request)
+    return redirect('auth')
 
