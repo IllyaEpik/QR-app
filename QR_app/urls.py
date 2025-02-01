@@ -19,6 +19,8 @@ from django.urls import path, include
 from home.views import view_home
 from contacts.views import view_contacts
 from subscriptions.views import view_subscriptions
+from . import settings
+from django.conf.urls.static import static
 # from user.urls import 
 
 
@@ -32,3 +34,6 @@ urlpatterns = [
     # path('qr_cods/', view=render_qr_cods, name="create_qr_cods"),
     # path('qr_cods/', view=render_qr_cods, name="create_qr_cods")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
