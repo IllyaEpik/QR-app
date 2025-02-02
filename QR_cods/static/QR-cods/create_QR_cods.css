@@ -1,6 +1,6 @@
 
 
-button {
+button, input{
     display: block;
     margin: 10px;
     padding: 10px 20px;
@@ -9,9 +9,11 @@ button {
     border: none;
     border-radius: 5px;
     font-size: 30px;
-    cursor: pointer;
     border-radius: 25px;
     
+}
+button{
+    cursor: pointer;
 }
 main{
     display: flex;
@@ -63,4 +65,8 @@ h1{
 .position{
     flex-direction:column;
     display: flex;
+}
+img{
+    width: 200px;
+    height: 200px;
 }

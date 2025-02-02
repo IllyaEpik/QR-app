@@ -5,21 +5,29 @@
 {% endblock %}
 {% block content %}
 <h1>Create QR-cods</h1>
+<form method="post">
+    {% csrf_token %}
     <main>
-        <div class="buttons">
-            <button>What is the Qr-code for?</button>
-            <button>What color you want?</button>
-            <button>Choose desigh?</button>
-            <button>Set icon?</button>
-        </div>
-        <div class="box-img">
-            <div class="position">
-                <img src="{% static 'images/qr_code.png' %}" alt="" class="img">
-                <div class="box-for-buttons">
-                    <button class="create">create</button>
-                    <button class="download">download</button>
+            <div class="buttons">
+                <input type="text" placeholder="url" required name="url">
+                <input type="text" placeholder="name" required name="name">
+                <input type="text" placeholder="color" name="color">
+                <input type="text" placeholder="background color" name="background_color">
+            </div>
+            <div class="box-img">
+                <div class="position">
+                    {% if name %}
+                    <img src="{{ MEDIA_URL }}images/qr_code/{{name}}" alt="" class="img">
+                    {% else %}
+                    <img src="{% static 'images/qr_code.png' %}" alt="" class="img" >
+                    {% endif %}
+                    <div class="box-for-buttons">
+                        <button class="download" name="button" value="check">check</button>
+                        <button class="create" name="button" value="create">create</button>
+                    </div>
+                    <p>{{error}}</p>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </form>
 {% endblock %}

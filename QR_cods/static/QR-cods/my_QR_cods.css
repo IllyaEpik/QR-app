@@ -31,6 +31,7 @@ main {
 
 .qr-codes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     /* border: 2px dotted blue; */
     padding: 20px;
@@ -39,7 +40,7 @@ main {
 
 .qr-card {
     text-align: center;
-    height: 298px;
+    /* height: 298px; */
     width: 247px;
     font-size: 30;
     background-color: rgba(255, 255, 255, 0.5);
@@ -74,8 +75,8 @@ main {
     width: 247;
 }
 .my-QR-code{
-    width: 198;
-    height: 189.09;
+    width: 200;
+    height: 200;
 }
 img {
     width: 100px;
@@ -90,4 +91,16 @@ a{
     background-color:  #21A0DF;
     border: solid #21A0DF 1px;
     border-radius: 100px;
+}
+button{
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    border-radius: 25px;
+    cursor: pointer;
 }

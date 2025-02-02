@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
+from .models import Profile
 # Create your views here.
 
 def authorization(request):
@@ -28,7 +29,8 @@ def registration(request):
             confirm_password = request.POST.get("confirm_password")
             email = request.POST.get("email")
             if password == confirm_password:
-                User.objects.create_user( username=username, password=password,email=email)
+                user = User.objects.create_user( username=username, password=password,email=email)
+                Profile.objects.create(user=user,subcription='free')
             else:
                 add = "passwords don't match"
         except IntegrityError:
