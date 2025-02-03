@@ -6,7 +6,10 @@ import qrcode, os
 def create_qr_code(request,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')
-    os.mkdir(os.path.abspath(path+'/..'))
+    try:
+        os.mkdir(os.path.abspath(path+'/..'))
+    except:
+        pass
     qr = qrcode.QRCode(
         version=1,
         box_size=10,
@@ -30,7 +33,7 @@ def render_create_qr_cods(request):
     error = ''
     name = None
     if request.method == "POST":
-        try:
+        # try:
             if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
                 pass
             else:
@@ -38,8 +41,9 @@ def render_create_qr_cods(request):
                     name = create_qr_code(request)
                 except:
                     name = create_qr_code(request,error=True)
-        except:
-            error = 'error creating qrcode'
+        # except Exception as error:
+        #     error = 'error creating qrcode'
+        #     # pass
     return render(request, template_name='create_QR_cods.html' ,context={
         'name':name,
         'error':error,
