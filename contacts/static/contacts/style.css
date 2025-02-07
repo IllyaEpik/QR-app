@@ -68,7 +68,7 @@ body {
   
   .footer {
     background: linear-gradient(to right #9AB7FF, #ffffff);
-    padding: 20px 10%;
+    /* padding: 20px 10%; */
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -76,7 +76,11 @@ body {
     flex-wrap: wrap;
     border-color: black;
     border-bottom-color: black;
-    margin-top: 150px;
+    bottom: 0px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100vw;
   }
   
   .social-icons {
