@@ -34,13 +34,25 @@ def render_create_qr_cods(request):
     name = None
     if request.method == "POST":
         # try:
+            count = len(QR_CODE.objects.all())
+            subscription = Profile.objects.get(user = request.user).subcription
             if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
                 pass
+            elif count > 0 and subscription == "free":
+                pass
+            elif count > 9 and subscription == "standart":
+                pass
+            elif count > 99 and subscription == "pro":
+                pass
             else:
-                try:
-                    name = create_qr_code(request)
-                except:
-                    name = create_qr_code(request,error=True)
+                if subscription == "free":
+                    name = create_qr_code(request,error=True) 
+                else:
+                    try:
+                        name = create_qr_code(request)
+                    except:
+                        name = create_qr_code(request,error=True)   
+              
         # except Exception as error:
         #     error = 'error creating qrcode'
         #     # pass
