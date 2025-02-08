@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import QR_CODE
 from user.models import Profile
 from QR_app.settings import MEDIA_URL
+from django.contrib.auth.decorators import login_required
 import qrcode, os
 def create_qr_code(request,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
@@ -29,12 +30,14 @@ def create_qr_code(request,error = False):
                             description = '')
     return filename
 # Create your views here.
+@login_required  
 def render_create_qr_cods(request):
     error = ''
     name = None
     if request.method == "POST":
         # try:
-            count = len(QR_CODE.objects.all())
+            print(request.POST.get('color'))
+            count = len(QR_CODE.objects.filter(profile=request.user))
             subscription = Profile.objects.get(user = request.user).subcription
             if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
                 pass
@@ -48,10 +51,10 @@ def render_create_qr_cods(request):
                 if subscription == "free":
                     name = create_qr_code(request,error=True) 
                 else:
-                    try:
+                    # try:
                         name = create_qr_code(request)
-                    except:
-                        name = create_qr_code(request,error=True)   
+                    # except Exception as error:
+                    #     name = create_qr_code(request,error=True)   
               
         # except Exception as error:
         #     error = 'error creating qrcode'
@@ -61,6 +64,7 @@ def render_create_qr_cods(request):
         'error':error,
         'MEDIA_URL':MEDIA_URL
     })
+@login_required
 def render_my_qr_cods(request):
     qr_codes = QR_CODE.objects.filter(profile = request.user)
     return render(request, template_name='my_QR_cods.html',context={
