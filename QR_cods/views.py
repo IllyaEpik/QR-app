@@ -27,6 +27,31 @@ def create_qr_code(request,error = False):
                             name = request.POST.get('name'),
                             qr_code = filename,
                             description = '')
+    if 'logo' in request.FILES:
+        logo_file = request.FILES['logo']
+        logo_path = default_storage.save(f"logos/{logo_file.name}", ContentFile(logo_file.read()))
+        logo_full_path = os.path.join(settings.MEDIA_ROOT, logo_path)
+
+        logo = Image.open(logo_full_path)
+
+        qr_width, qr_height = img.size
+        logo_size = qr_width // 4
+        logo = logo.resize((logo_size, logo_size), Image.LANCZOS)
+
+        pos = ((qr_width - logo_size) // 2, (qr_height - logo_size) // 2)
+
+        img.paste(logo, pos, mask=logo)
+
+    filename = f"qr_{request.POST.get('name')}.png"
+    path = os.path.join(settings.MEDIA_ROOT, "qrcodes", filename)
+    img.save(path)
+
+    qr_code = QR_CODE.objects.create(
+        profile=request.user,
+        name=request.POST.get('name'),
+        description=""
+    )
+    
     return filename
 # Create your views here.
 def render_create_qr_cods(request):
