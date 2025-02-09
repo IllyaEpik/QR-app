@@ -1,4 +1,6 @@
-
+*{
+    font-size: 30px;
+}
 
 button, input{
     display: block;
@@ -27,7 +29,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 86px;
+    gap: 40px;
 }
 .create-QR-cods{
     background-color:  #21A0DF;

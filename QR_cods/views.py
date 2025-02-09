@@ -53,11 +53,6 @@ def create_qr_code(request,error = False):
                             qr_code = filename,
                             description = '')
 
-    qr_code = QR_CODE.objects.create(
-        profile=request.user,
-        name=request.POST.get('name'),
-        description=""
-    )
     
     return filename
 # Create your views here.
