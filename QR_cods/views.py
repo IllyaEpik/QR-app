@@ -4,7 +4,26 @@ from user.models import Profile
 from QR_app.settings import MEDIA_URL
 from PIL import Image
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect
+from django.http import JsonResponse
 import qrcode, os
+from django.shortcuts import render
+
+def filter_qr_codes(request):
+    query = request.GET.get("query", "")
+    qr_codes = QRCode.objects.all()
+
+    if query:
+        qr_codes = qr_codes.filter(name__icontains=query)
+
+    return render(request, "qr_codes_list.html", {"qr_codes": qr_codes, "query": query})
+
+
+def delete_qr_code(request, qr_id):
+    qr_code = get_object_or_404(QRCode, id=qr_id)
+    qr_code.delete()
+    return JsonResponse({"message": "QR-код успішно видалено"}, status=200)
+
 def create_qr_code(request,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')

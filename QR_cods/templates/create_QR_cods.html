@@ -15,6 +15,7 @@
                 <input type="text" placeholder="background color" name="background_color">
                 <!-- <label></label> -->
                 <span>Логотип:<input type="file" name="logo" accept="image/*"></span>
+                <a href="{% url 'delete_qr' qr.id %}" onclick="return confirm('Вы уверены?');">Видалити</a>
             </div>
             <div class="box-img">
                 <div class="position">
