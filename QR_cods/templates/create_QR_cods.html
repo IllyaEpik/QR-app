@@ -4,8 +4,11 @@
 <link rel="stylesheet" href="{% static 'QR-cods/create_QR_cods.css' %}">
 {% endblock %}
 {% block content %}
-<h1>Create QR-cods</h1>
+
+<h1>Create QR-codes</h1>
 <form method="post" enctype="multipart/form-data">
+
+
     {% csrf_token %}
     <main>
             <div class="buttons">
