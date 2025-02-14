@@ -2,16 +2,12 @@
 {% load static %}
 {% block link  %} <link rel="stylesheet" href="{% static 'subscriptions/style.css'%}"> {% endblock %}
 {% block content %}
-
-
-  
     <div class="content">
       <h1>subscriptions</h1>
-  
+      <form method="post">
+        {% csrf_token %}
       <div class="plans">
        
-  
-        
         <div class="plan">
             <div class="color-div">
                 <h2>different</h2>
@@ -32,7 +28,11 @@
           <p>❌</p>
           <p>free</p>
           <p>slow</p>
-          <button class="current">current</button>
+          {% if subscription == 'free' %}
+            <button class="current" value="free" name="subscription">current</button>
+          {% else %}
+            <button value="free" name="subscription">confirm</button>
+          {% endif %}
         </div>
         <div class="plan">
             <div class="color-div standart-color-div">
@@ -43,7 +43,12 @@
           <p>✔️</p>
           <p>2$/mouth</p>
           <p>medium</p>
-          <button>confirm</button>
+          {% if subscription == 'standart' %}
+            <button class="current" value="standart" name="subscription">current</button>
+          {% else %}
+            <button value="standart" name="subscription">confirm</button>
+          {% endif %}
+          
         </div>
         <div class="plan">
             <div class="color-div pro-color-div">
@@ -54,9 +59,14 @@
           <p>✔️</p>
           <p>10$/mouth</p>
           <p>fast</p>
-          <button>confirm</button>
+          {% if subscription == 'pro' %}
+            <button class="current" value="pro" name="subscription">current</button>
+          {% else %}
+          <button value="pro" name="subscription">confirm</button>
+          {% endif %}
+          
         </div>
-      </div>
+      </div></form>
     </div>
 
 {% endblock %}

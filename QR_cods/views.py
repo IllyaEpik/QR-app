@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 import qrcode, os
+import matplotlib.colors as mc
+
 from django.shortcuts import render
 
 def filter_qr_codes(request):
@@ -44,7 +46,7 @@ def create_qr_code(request,error = False):
         img = qr.make_image(fill_color='black',back_color='white').convert('RGB')
     else:
         img = qr.make_image(fill_color=request.POST.get('color'), back_color=request.POST.get('background_color')).convert('RGB')
-    if 'logo' in request.FILES:
+    if 'logo' in request.FILES and not error:
         # logo_file = request.FILES['logo']
         # logo_path = default_storage.save(f"logos/{logo_file.name}", ContentFile(logo_file.read()))
         # logo_full_path = os.path.join(settings.MEDIA_ROOT, logo_path)
@@ -52,10 +54,15 @@ def create_qr_code(request,error = False):
         logo = Image.open(request.FILES.get('logo'))
         data = logo.getdata()
 
+        color = []
+        for c in mc.to_rgb(request.POST.get('background_color')):
+            color.append(int(c*255))
+        color = (color[0],color[1],color[2])
+        print(color)
         new_data = []
         for item in data:
             if item[3] == 0:
-                new_data.append((255,255,255))
+                new_data.append(color)
             else:
                 new_data.append(item)
         logo.putdata(new_data)
@@ -85,22 +92,22 @@ def render_create_qr_cods(request):
             
             count = len(QR_CODE.objects.filter(profile=request.user))
             subscription = Profile.objects.get(user = request.user).subcription
-            if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
-                pass
-            # elif count > 0 and subscription == "free":
-            #     pass
-            # elif count > 9 and subscription == "standart":
-            #     pass
-            # elif count > 99 and subscription == "pro":
-            #     pass
+            # if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
+            #     error = ''
+            if count > 0 and subscription == "free":
+                error = 'you cannot have more qr codes, it is limit of your subscription'
+            elif count > 9 and subscription == "standart":
+                error = 'you cannot have more qr codes, it is limit of your subscription'
+            elif count > 99 and subscription == "pro":
+                error = 'you cannot have more qr codes, it is limit of your subscription'
             else:
-                # if subscription == "free":
-                #     name = create_qr_code(request,error=True) 
-                # else:
-                    try:
+                if subscription == "free":
+                    name = create_qr_code(request,error=True) 
+                else:
+                    # try:
                         name = create_qr_code(request)
-                    except:
-                        name = create_qr_code(request,error=True)   
+                    # except:
+                        # name = create_qr_code(request,error=True)   
               
         # except Exception as error:
         #     error = 'error creating qrcode'
