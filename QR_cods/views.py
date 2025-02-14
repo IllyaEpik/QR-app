@@ -11,7 +11,7 @@ from django.shortcuts import render
 
 def filter_qr_codes(request):
     query = request.GET.get("query", "")
-    qr_codes = QRCode.objects.all()
+    qr_codes = QR_CODE.objects.all()
 
     if query:
         qr_codes = qr_codes.filter(name__icontains=query)
@@ -20,7 +20,7 @@ def filter_qr_codes(request):
 
 
 def delete_qr_code(request, qr_id):
-    qr_code = get_object_or_404(QRCode, id=qr_id)
+    qr_code = get_object_or_404(QR_CODE, id=qr_id)
     qr_code.delete()
     return JsonResponse({"message": "QR-код успішно видалено"}, status=200)
 
@@ -80,6 +80,7 @@ def render_create_qr_cods(request):
     error = ''
     name = None
     if request.method == "POST":
+            print(request.POST.get('color'))
         # try:
             
             count = len(QR_CODE.objects.filter(profile=request.user))

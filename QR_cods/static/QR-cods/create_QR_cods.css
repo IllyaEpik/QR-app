@@ -2,7 +2,7 @@
     font-size: 30px;
 }
 
-button, input{
+input, button{
     display: block;
     margin: 10px;
     padding: 10px 20px;
@@ -13,6 +13,9 @@ button, input{
     font-size: 30px;
     border-radius: 25px;
     
+}
+.color{
+    padding: 5px 10px;
 }
 button{
     cursor: pointer;
