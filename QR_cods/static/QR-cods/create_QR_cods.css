@@ -45,7 +45,7 @@ h1{
 }
 .box-img{
     background-color: rgba(255, 255, 255, 0.5);
-    width: 333px;
+    width: 333px;border-radius: 25px;
     height: 480px;
     gap: 24px;
     padding: 60px 75px;
@@ -76,7 +76,8 @@ h1{
     background-color: #7bb373;
 }
 .position{
-    flex-direction:column;
+    flex-direction: column;
+    
     display: flex;
 }
 img{

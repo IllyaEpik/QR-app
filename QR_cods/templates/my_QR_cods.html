@@ -16,7 +16,7 @@
                 <p>{{qr.date_of_creation}}</p>
                 <form method="post">
                     {% csrf_token %}
-                    <button name="id" value="{{qr.id}}">deteils</button>
+                    <button name="id" value="{{qr.id}}">details</button>
                 </form> 
                 </div>
                 {% endfor %}
@@ -31,7 +31,7 @@
         </section>
     </main>
     <button class="url-to-create">
-    <a href="{% url 'create_qr_cods' %}">create QR-code</a>
+    <a href="{% url 'create_qr_cods' %}" class="go">create QR-code</a>
 </button>
 </body>
 {% endblock %}

@@ -48,7 +48,11 @@ main {
     display: flex;
     flex-direction: column;
     padding: 60px;
+    border-radius: 25px;
     margin: 20px;
+}
+.go{
+    font-size: 30;
 }
 .url-to-create{
     color: black;
