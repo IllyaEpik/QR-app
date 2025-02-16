@@ -12,8 +12,9 @@
         <header>
             <div class="name">
                 {% block user %}
-                    {% if request.user.username%}
-                        <p class="logo"><img src="{% static 'images/icon.png' %}" alt="" class="icon">{{ request.user.username }}</p>
+                {% if request.user.username%}<img src="{% static 'images/icon.png' %}" alt="" class="icon">
+                        <p class="logo">{{ request.user.username }}</p>
+                        <a href="{% url 'logout' %}" class="logout">logout</a>
                     {% else %}
                         <a href="{% url 'reg' %}" class="login">login</a>
                     {% endif %}
@@ -25,8 +26,6 @@
                 <div class="my-QR-cods"><a href="{% url 'my_qr_cods' %}">my QR-codes</a></div>
                 <div class="contacts"><a href="{% url 'contacts' %}">contacts</a></div>
                 {% if request.user.username %}
-                        <!-- <p class="logo"><img src="{% static 'images/icon.png' %}" alt="" class="icon"></p> -->
-                        <a href="{% url 'logout' %}" class="logout">logout</a>
                 {% endif %}
             </nav>
         </header>

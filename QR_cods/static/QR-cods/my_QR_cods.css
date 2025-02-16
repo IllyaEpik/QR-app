@@ -60,10 +60,13 @@ main {
     transform: translate(-50%);
     border-radius: 20px;
     border-color: none;
+    transition: 0.3s;
 }
 
 .url-to-create:hover {
     background-color: #7BA4E0;
+    color: blue;
+
 }
 
 /* /* .create-qr-code {
@@ -91,16 +94,22 @@ a{
     background-color:  #21A0DF;
     border: solid #21A0DF 1px;
     border-radius: 100px;
+    
 }
 button{
     display: block;
     margin: 10px;
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: red;
+    color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 5px;
     font-size: 30px;
     border-radius: 25px;
     cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: hsl(200, 100%, 80%);
 }

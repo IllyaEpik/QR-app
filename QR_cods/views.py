@@ -8,7 +8,8 @@ from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 import qrcode, os
 import matplotlib.colors as mc
-
+from django.http import HttpResponse
+import base64, io
 from django.shortcuts import render
 
 def filter_qr_codes(request):
@@ -78,8 +79,10 @@ def create_qr_code(request,error = False):
                             name = request.POST.get('name'),
                             qr_code = filename,
                             description = '')
-
-    
+    else:
+        ok = io.BytesIO()
+        img.save(ok,format="PNG")
+        filename = base64.b64encode(ok.getvalue()).decode("utf-8")
     return filename
 # Create your views here.
 @login_required  
@@ -112,10 +115,14 @@ def render_create_qr_cods(request):
         # except Exception as error:
         #     error = 'error creating qrcode'
         #     # pass
+    url = True
+    if request.POST.get('button') == 'check':
+        url = False
     return render(request, template_name='create_QR_cods.html' ,context={
         'name':name,
         'error':error,
-        'MEDIA_URL':MEDIA_URL
+        'MEDIA_URL':MEDIA_URL,
+        "url":url
     })
 @login_required
 def render_my_qr_cods(request):

@@ -59,13 +59,21 @@ h1{
     border: black solid 1px;
     border-radius: 16px;
     color: white;
+    transition: 0.3s;
 }
 .download{
     background-color: #00C8FF;
     border: black solid 1px;
     border-radius: 16px;
     color: white;
-    
+    transition: 0.3s;
+}
+.download:hover{
+    background-color: #08a2cc;
+}
+
+.create:hover{
+    background-color: #7bb373;
 }
 .position{
     flex-direction:column;

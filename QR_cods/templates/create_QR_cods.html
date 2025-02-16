@@ -22,7 +22,11 @@
             <div class="box-img">
                 <div class="position">
                     {% if name %}
-                    <img src="{{ MEDIA_URL }}images/qr_code/{{name}}" alt="" class="img">
+                        {% if url %}
+                            <img src="{{ MEDIA_URL }}images/qr_code/{{name}}" alt="" class="img">
+                        {% else %}
+                            <img src="data:image/png;base64,{{ name }}" alt="" class="img">
+                        {% endif %}
                     {% else %}
                     <img src="{% static 'images/qr_code.png' %}" alt="" class="img" >
                     {% endif %}

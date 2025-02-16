@@ -15,10 +15,11 @@
                 <p class="text-for-QR-code">{{qr.name}}</p>
                 <p>{{qr.date_of_creation}}</p>
                 <form method="post">
-                    <button name="id" value="">delete</button>
-                </form>
-            </div>
-            {% endfor %}
+                    {% csrf_token %}
+                    <button name="id" value="{{qr.id}}">deteils</button>
+                </form> 
+                </div>
+                {% endfor %}
             <!-- <div class="qr-card">
                 <img src="{% static 'images/qr_code.png' %}" alt="QR code" class="my-QR-code">
                 <p class="text-for-QR-code">QR-code for web-site</p>
