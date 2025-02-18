@@ -2,22 +2,49 @@
 {% load static %}
 {% block link%}
 <link rel="stylesheet" href="{% static 'QR-cods/my_QR_cods.css' %}">
+<script src="{% static 'QR-cods/my.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 
 <body>
     <main>
+
         <h1>my QR-codes</h1>
+        
+        <div class="filter-div">
+            <input type="text">
+            <button class="filter">Filter</button>
+        </div>
+        {% if modal %}
+        <div class="modal show" id="modal">
+            <button class="close" id="close">×</button>
+            <img src="{{ MEDIA_URL }}images/qr_code/{{modal.qr_code}}" alt="QR code" class="my-QR-code">
+            <p class="date">{{modal.date_of_creation}}</p>
+            <!-- <p class="wal"></p> -->
+             <form method="post">
+                {% csrf_token %}
+                <input type="text" name="name" value="{{modal.name}}">
+                <textarea name="description" id="">{{modal.description}}</textarea>
+                <button class="save" name="id" value="{{modal.id}}" >Save</button>
+             </form>
+
+        </div>
+        <div id="modalBg" class="modal-bg show"></div>
+        {% endif %}
         <section class="qr-codes">
             {% for qr in qr_codes %}
-            <div class="qr-card">
+            <div class="qr-card" id = "{{qr.name}}">
                 <img src="{{ MEDIA_URL }}images/qr_code/{{qr.qr_code}}" alt="QR code" class="my-QR-code">
                 <p class="text-for-QR-code">{{qr.name}}</p>
                 <p>{{qr.date_of_creation}}</p>
-                <form method="post">
-                    {% csrf_token %}
-                    <button name="id" value="{{qr.id}}">details</button>
-                </form> 
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <button name="id" value="{{qr.id}}" class="details">details</button>
+                    </form>
+                    
+                    
+                    </div>
                 </div>
                 {% endfor %}
             <!-- <div class="qr-card">

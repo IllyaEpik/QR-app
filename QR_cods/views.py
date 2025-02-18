@@ -126,8 +126,22 @@ def render_create_qr_cods(request):
     })
 @login_required
 def render_my_qr_cods(request):
+    modal = None
     qr_codes = QR_CODE.objects.filter(profile = request.user)
+    if request.method == "POST":
+        if not request.POST.get("name"):
+
+            modal = request.POST.get("id")
+
+            modal = QR_CODE.objects.get(id = modal)
+        else:
+            qr_code = QR_CODE.objects.get(id = request.POST.get("id"))
+            qr_code.name = request.POST.get("name")
+            qr_code.description = request.POST.get("description")
+            qr_code.save()
+    # print(modal)
     return render(request, template_name='my_QR_cods.html',context={
         'qr_codes':qr_codes,
-        'MEDIA_URL':MEDIA_URL
+        'MEDIA_URL':MEDIA_URL,
+        'modal': modal
     })

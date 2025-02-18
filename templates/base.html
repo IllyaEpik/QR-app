@@ -12,7 +12,8 @@
         <header>
             <div class="name">
                 {% block user %}
-                {% if request.user.username%}<img src="{% static 'images/icon.png' %}" alt="" class="icon">
+                {% if request.user.username%}
+                        <img src="{% static 'images/icon.png' %}" alt="" class="icon">
                         <p class="logo">{{ request.user.username }}</p>
                         <a href="{% url 'logout' %}" class="logout">logout</a>
                     {% else %}
