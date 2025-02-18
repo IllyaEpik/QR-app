@@ -1,6 +1,10 @@
 let qrCards = document.querySelectorAll('.qr-card')
 let inp = document.querySelector('input')
 let fil = document.querySelector('.filter')
+let details = document.querySelector('.details')
+let modal = document.getElementById('modal')
+let close1 = document.getElementById('close')
+let bg = document.getElementById('modalBg')
 
 
 fil.addEventListener("click", (e) =>{
@@ -12,7 +16,21 @@ fil.addEventListener("click", (e) =>{
         qrCard.classList.add("hidden")
     }
 } 
-})
+})     
+
+close1.addEventListener("click", togglePopup)
+details.addEventListener("click", togglePopup)
+bg.addEventListener("click", togglePopup)
+
+
+function togglePopup(){
+    bg.classList.toggle("show")
+    modal.classList.toggle("show")
+}
+
+
+
+
 
 
 

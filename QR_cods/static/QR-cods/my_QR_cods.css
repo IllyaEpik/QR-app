@@ -141,3 +141,63 @@ input{
     border-radius: 25px;
     transition: 0.3s;
 }
+.modal-bg {
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.modal{
+    position: fixed;
+    background-color: white;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    border-radius:10px;
+    padding: 10px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.close{
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top:10px;
+    right:10px ; 
+}
+
+.modal-bg.show{
+    opacity: 0.6;
+    visibility: visible;
+}
+
+.modal.show{
+    visibility: visible;
+    opacity: 1;
+}
+.date{
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+}
+.wal{
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+}
+.save{
+    color: aquamarine;
+    display: flex;
+    align-items: center;
+}
