@@ -20,11 +20,17 @@
             <button class="close" id="close">×</button>
             <img src="{{ MEDIA_URL }}images/qr_code/{{modal.qr_code}}" alt="QR code" class="my-QR-code">
             <p class="date">{{modal.date_of_creation}}</p>
-            <p class="wal">{{modal.name}}</p>
-            <button class="save">Save</button>
+            <!-- <p class="wal"></p> -->
+             <form method="post">
+                {% csrf_token %}
+                <input type="text" name="name" value="{{modal.name}}">
+                <textarea name="description" id="">{{modal.description}}</textarea>
+                <button class="save" name="id" value="{{modal.id}}" >Save</button>
+             </form>
+
         </div>
-        {% endif %}
         <div id="modalBg" class="modal-bg show"></div>
+        {% endif %}
         <section class="qr-codes">
             {% for qr in qr_codes %}
             <div class="qr-card" id = "{{qr.name}}">

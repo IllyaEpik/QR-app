@@ -151,6 +151,7 @@ input{
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
+    z-index: 1;
 }
 
 .modal{
@@ -166,6 +167,7 @@ input{
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s;
+    z-index: 2;
 }
 
 .close{
@@ -187,9 +189,9 @@ input{
     opacity: 1;
 }
 .date{
-    display: flex;
-    flex-direction: row-reverse;
-    height: fit-content;
+    
+    margin-left: auto;
+    margin-right: auto
 }
 .wal{
     display: flex;
@@ -198,6 +200,7 @@ input{
 }
 .save{
     color: aquamarine;
-    display: flex;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
