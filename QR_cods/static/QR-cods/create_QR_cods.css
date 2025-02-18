@@ -16,7 +16,19 @@ input, button{
 }
 .color{
     padding: 5px 10px;
+    border-radius: 5;
 }
+.logo::file-selector-button {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    width: 0px;
+    display: none;
+} 
 button{
     cursor: pointer;
 }
