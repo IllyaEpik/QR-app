@@ -37,11 +37,10 @@ input, button, select, option{
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
 } */
-/* Когда select открыт, переворачиваем стрелку */
+
 .custom-select select:focus {
     transform: rotate(180deg);
 }
-/* Стили для вариантов в списке */
 .custom-select option {
     padding: 5px;
     border-radius: 10px;
