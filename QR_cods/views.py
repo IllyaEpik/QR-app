@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 import qrcode, os
-import matplotlib.colors as mc
+# import matplotlib.colors as mc
 from django.http import HttpResponse
 import base64, io
 from django.shortcuts import render
