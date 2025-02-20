@@ -2,7 +2,7 @@
 {% load static %}
 {% block link%}
 <link rel="stylesheet" href="{% static 'QR-cods/create_QR_cods.css' %}">
-<script src="{% static 'QR-cods/script.js' %}" defer></script>
+<script src="{% static 'QR-cods/create.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 
@@ -15,16 +15,24 @@
             <div class="buttons">
                 <input type="text" placeholder="url" required name="url">
                 <input type="text" placeholder="name" required name="name">
+                <select  class="custom-select" >
+                    <option value="color">color</option>
+                    <option value="gradient">gradient</option>
+                </select>
                 <span>color:<input type="color" placeholder="color" name="color" class="color"></span>
                 <span>background color:<input type="color" placeholder="background color" name="background_color" class="color" value="#FFFFFF"></span>
-                <span>logo:<input type="file" name="logo" accept="image/*"></span>
+                <span>logo:<input type="file" name="logo" class="logo" accept="image/*"></span>
             </div>
             <div class="box-img">
                 <div class="position">
                     {% if name %}
-                    <img src="{{ MEDIA_URL }}images/qr_code/{{name}}" alt="" class="img">
+                        {% if url %}
+                            <img src="{{ MEDIA_URL }}images/qr_code/{{name}}" alt="" class="img">
+                        {% else %}
+                            <img src="data:image/png;base64,{{ name }}" alt="" class="img">
+                        {% endif %}
                     {% else %}
-                    <img src="{% static 'images/qr_code.png' %}" alt="" class="img" >
+                        <img src="{% static 'images/qr_code.png' %}" alt="" class="img" >
                     {% endif %}
                     <div class="box-for-buttons">
                         <button class="download" name="button" value="check">check</button>
@@ -35,4 +43,4 @@
             </div>
         </main>
     </form>
-{% endblock %}  
+{% endblock %}

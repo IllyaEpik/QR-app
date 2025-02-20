@@ -1,6 +1,8 @@
+*{
+    font-size: 30px;
+}
 
-
-button {
+input, button, select, option{
     display: block;
     margin: 10px;
     padding: 10px 20px;
@@ -9,9 +11,56 @@ button {
     border: none;
     border-radius: 5px;
     font-size: 30px;
-    cursor: pointer;
     border-radius: 25px;
     
+}
+.color{
+    padding: 5px 10px;
+    border-radius: 5;
+}
+.logo::file-selector-button {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    width: 0px;
+    display: none;
+} 
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+/* .custom-select{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+} */
+
+.custom-select select:focus {
+    transform: rotate(180deg);
+}
+.custom-select option {
+    padding: 5px;
+    border-radius: 10px;
+}
+.custom-select option[value="color"] {
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+.custom-select option[value="gradient"] {
+    background-color: #21A0DF;
+    color: white;
+    border-radius: 10px;
+}
+.custom-select option:checked {
+    background-color: #4A90E2;
+    color: white;
+}
+button{
+    cursor: pointer;
 }
 main{
     display: flex;
@@ -25,7 +74,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 86px;
+    gap: 40px;
 }
 .create-QR-cods{
     background-color:  #21A0DF;
@@ -38,7 +87,7 @@ h1{
 }
 .box-img{
     background-color: rgba(255, 255, 255, 0.5);
-    width: 333px;
+    width: 333px;border-radius: 25px;
     height: 480px;
     gap: 24px;
     padding: 60px 75px;
@@ -52,15 +101,28 @@ h1{
     border: black solid 1px;
     border-radius: 16px;
     color: white;
+    transition: 0.3s;
 }
 .download{
     background-color: #00C8FF;
     border: black solid 1px;
     border-radius: 16px;
     color: white;
-    
+    transition: 0.3s;
+}
+.download:hover{
+    background-color: #08a2cc;
+}
+
+.create:hover{
+    background-color: #7bb373;
 }
 .position{
-    flex-direction:column;
+    flex-direction: column;
+    
     display: flex;
+}
+img{
+    width: 200px;
+    height: 200px;
 }

@@ -31,6 +31,7 @@ main {
 
 .qr-codes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     /* border: 2px dotted blue; */
     padding: 20px;
@@ -39,7 +40,7 @@ main {
 
 .qr-card {
     text-align: center;
-    height: 298px;
+    /* height: 298px; */
     width: 247px;
     font-size: 30;
     background-color: rgba(255, 255, 255, 0.5);
@@ -47,19 +48,29 @@ main {
     display: flex;
     flex-direction: column;
     padding: 60px;
-    
+    border-radius: 25px;
+    margin: 20px;
+}
+.go{
+    font-size: 30;
 }
 .url-to-create{
     color: black;
     font-size: 50px;
     background-color: #95B4E2;
-    margin-left: 600px;
+    position: relative;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%);
     border-radius: 20px;
     border-color: none;
+    transition: 0.3s;
 }
 
 .url-to-create:hover {
     background-color: #7BA4E0;
+    color: blue;
+
 }
 
 /* /* .create-qr-code {
@@ -71,8 +82,8 @@ main {
     width: 247;
 }
 .my-QR-code{
-    width: 198;
-    height: 189.09;
+    width: 200;
+    height: 200;
 }
 img {
     width: 100px;
@@ -87,4 +98,115 @@ a{
     background-color:  #21A0DF;
     border: solid #21A0DF 1px;
     border-radius: 100px;
+    
+}
+button{
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: hsl(200, 100%, 80%);
+}
+.filter{
+    width: min-content;
+    
+}
+.hidden{
+    visibility: hidden;
+}
+.filter-div{
+    display: flex;
+    
+}
+input{
+    margin: 0;
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+.modal-bg {
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+.modal{
+    position: fixed;
+    background-color: white;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    border-radius:10px;
+    padding: 10px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 2;
+}
+
+.close{
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top:10px;
+    right:10px ; 
+}
+
+.modal-bg.show{
+    opacity: 0.6;
+    visibility: visible;
+}
+
+.modal.show{
+    visibility: visible;
+    opacity: 1;
+}
+.date{
+    
+    margin-left: auto;
+    margin-right: auto
+}
+.wal{
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+}
+.save{
+    color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.filter-div{
+    display: flex;
+    gap: 10px;
+    margin-top: 150px;
+    margin-left: 500px;
 }
