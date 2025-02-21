@@ -29,6 +29,36 @@ input, button, select, option{
     width: 0px;
     display: none;
 } 
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+/* .custom-select{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+} */
+
+.custom-select select:focus {
+    transform: rotate(180deg);
+}
+.custom-select option {
+    padding: 5px;
+    border-radius: 10px;
+}
+.custom-select option[value="color"] {
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+.custom-select option[value="gradient"] {
+    background-color: #21A0DF;
+    color: white;
+    border-radius: 10px;
+}
+.custom-select option:checked {
+    background-color: #4A90E2;
+    color: white;
+}
 button{
     cursor: pointer;
 }
