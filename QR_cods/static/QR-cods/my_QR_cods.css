@@ -210,3 +210,7 @@ input{
     margin-top: 150px;
     margin-left: 500px;
 }
+.delete{
+    display: flex;
+    align-items: center;
+}

@@ -26,8 +26,10 @@
                 <input type="text" name="name" value="{{modal.name}}">
                 <textarea name="description" id="">{{modal.description}}</textarea>
                 <button class="save" name="id" value="{{modal.id}}" >Save</button>
+                <button class="download" name="down" type="button"><a href="{{ MEDIA_URL }}images/qr_code/{{modal.qr_code}}" download="QR code.png">Download</a></button>
+                <button class="delete" name="del" value="{{modal.id}}">Delete</button>
              </form>
-
+        
         </div>
         <div id="modalBg" class="modal-bg show"></div>
         {% endif %}
