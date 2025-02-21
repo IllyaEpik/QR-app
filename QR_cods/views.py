@@ -61,10 +61,14 @@ def create_qr_code(request,error = False):
         color = (color[0],color[1],color[2])
         print(color)
         new_data = []
-        for item in data:
-            if item[3] == 0:
-                new_data.append(color)
-            else:
+        try:
+            for item in data:
+                if item[3] == 0:
+                    new_data.append(color)
+                else:
+                    new_data.append(item)
+        except:
+            for item in data:
                 new_data.append(item)
         logo.putdata(new_data)
         qr_width, qr_height = img.size

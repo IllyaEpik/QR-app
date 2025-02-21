@@ -122,7 +122,8 @@ button:hover{
     
 }
 .hidden{
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
 .filter-div{
     display: flex;
