@@ -19,15 +19,23 @@
         <div class="modal show" id="modal">
             <button class="close" id="close">×</button>
             <img src="{{ MEDIA_URL }}images/qr_code/{{modal.qr_code}}" alt="QR code" class="my-QR-code">
-            <p class="date">{{modal.date_of_creation}}</p>
+            <h2 class="date">{{modal.date_of_creation}}</h2>
             <!-- <p class="wal"></p> -->
              <form method="post">
                 {% csrf_token %}
-                <input type="text" name="name" value="{{modal.name}}">
-                <textarea name="description" id="">{{modal.description}}</textarea>
-                <button class="save" name="id" value="{{modal.id}}" >Save</button>
+                <div class="mix">
+                    <span>name:<input type="text" name="name" value="{{modal.name}}"></span>
+                    <span>description:<textarea name="description" id="">{{modal.description}}</textarea></span>
+                    
+                </div>
+                
+                <div class="mix">
+                    <button class="delete" name="del" value="{{modal.id}}">Delete</button>
+                    <button class="download" name="down" type="button"><a href="{{ MEDIA_URL }}images/qr_code/{{modal.qr_code}}" download="QR code.png" class="download">Download</a></button>
+                    <button class="save" name="id" value="{{modal.id}}" >Save</button>
+                </div>
              </form>
-
+        
         </div>
         <div id="modalBg" class="modal-bg show"></div>
         {% endif %}

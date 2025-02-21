@@ -18,6 +18,9 @@ input, button, select, option{
     padding: 5px 10px;
     border-radius: 5;
 }
+#two{
+    transition: 0.5s linear;
+}
 .logo::file-selector-button {
     background-color: grey;
     color: white;
@@ -46,8 +49,8 @@ input, button, select, option{
     border-radius: 10px;
 }
 .custom-select option[value="color"] {
-    background-color: blue;
-    color: white;
+    background-color: rgb(121, 121, 223);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
 }
 .custom-select option[value="gradient"] {
@@ -125,4 +128,13 @@ h1{
 img{
     width: 200px;
     height: 200px;
+}
+.create-QR-cods{
+    background-color:  #21A0DF;
+    border: solid #21A0DF 1px;
+    border-radius: 100px;
+}
+.hidden{
+    /* display: none; */
+    opacity: 0;
 }

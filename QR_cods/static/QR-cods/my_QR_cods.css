@@ -129,7 +129,7 @@ button:hover{
     display: flex;
     
 }
-input{
+input, textarea{
     margin: 0;
     display: block;
     margin: 10px;
@@ -158,7 +158,7 @@ input{
 .modal{
     position: fixed;
     background-color: white;
-    width: 400px;
+    /* width: 600px; */
     top: 50%;
     left: 50%;
     transform:translate(-50%, -50%);
@@ -169,8 +169,11 @@ input{
     opacity: 0;
     transition: all 0.5s;
     z-index: 2;
+    background: linear-gradient(to left, #a1bbfd, #ffffff);
 }
-
+.mix{
+    display:flex;
+}
 .close{
     font-size: 24px;
     text-decoration: none;
@@ -205,9 +208,25 @@ input{
     margin-right: auto;
     
 }
-.filter-div{
+/* .filter-div{
     display: flex;
     gap: 10px;
     margin-top: 150px;
     margin-left: 500px;
+} */
+.delete{
+    display: flex;
+    align-items: center;
+    color: #865226;
+}
+.download{
+    color: #291ba5;
+}
+.my-QR-cods{
+    background-color:  #21A0DF;
+    border: solid #21A0DF 1px;
+    border-radius: 100px;
+}
+span{
+    font-size: 40px;
 }

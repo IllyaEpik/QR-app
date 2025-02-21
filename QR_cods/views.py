@@ -46,7 +46,28 @@ def create_qr_code(request,error = False):
     if error:
         img = qr.make_image(fill_color='black',back_color='white').convert('RGB')
     else:
-        img = qr.make_image(fill_color=request.POST.get('color'), back_color=request.POST.get('background_color')).convert('RGB')
+        if request.POST.get("type") == "color":
+            img = qr.make_image(fill_color=request.POST.get('color'), back_color=request.POST.get('background_color')).convert('RGB')
+
+        else:
+            color3 = (0,0,0)
+            ok = mc.to_rgb(request.POST.get('background_color'))
+            if ok[0]+ok[1]+ok[2] < 1.5:
+                color3 = (255,255,255)
+            img = qr.make_image(fill_color=color3,back_color=request.POST.get('background_color')).convert('RGB')
+            size = img.width
+            color1 = mc.to_rgb(request.POST.get("color"))
+            color2 = mc.to_rgb(request.POST.get("color_2"))
+            color1 = (color1[0]*255,color1[1]* 255,color1[2]* 255)
+            color2 = (color2[0]* 255,color2[1]* 255,color2[2]* 255 )
+            for h in range(size):
+                for w in range(size):
+                    
+                    if img.getpixel((w,h)) == color3:
+                        r = int(color1[0] + (color2[0] - color1[0]) * w / size)
+                        g = int(color1[1] + (color2[1] - color1[1]) * w / size)
+                        b = int(color1[2] + (color2[2] - color1[2]) * w / size)
+                        img.putpixel((w,h),(r,g,b))
     if 'logo' in request.FILES and not error:
         # logo_file = request.FILES['logo']
         # logo_path = default_storage.save(f"logos/{logo_file.name}", ContentFile(logo_file.read()))
@@ -138,11 +159,16 @@ def render_my_qr_cods(request):
             modal = request.POST.get("id")
 
             modal = QR_CODE.objects.get(id = modal)
+            
+        elif request.POST.get("del"):
+            delete = QR_CODE.objects.get(id=request.POST.get("del"))
+            delete.delete()
         else:
             qr_code = QR_CODE.objects.get(id = request.POST.get("id"))
             qr_code.name = request.POST.get("name")
             qr_code.description = request.POST.get("description")
             qr_code.save()
+        
     # print(modal)
     return render(request, template_name='my_QR_cods.html',context={
         'qr_codes':qr_codes,
