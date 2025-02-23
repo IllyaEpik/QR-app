@@ -9,25 +9,11 @@ from django.http import JsonResponse
 import qrcode, os
 import matplotlib.colors as mc
 from django.http import HttpResponse
+from django.core.handlers.wsgi import WSGIRequest
 import base64, io
 from django.shortcuts import render
-
-def filter_qr_codes(request):
-    query = request.GET.get("query", "")
-    qr_codes = QR_CODE.objects.all()
-
-    if query:
-        qr_codes = qr_codes.filter(name__icontains=query)
-
-    return render(request, "qr_codes_list.html", {"qr_codes": qr_codes, "query": query})
-
-
-def delete_qr_code(request, qr_id):
-    qr_code = get_object_or_404(QR_CODE, id=qr_id)
-    qr_code.delete()
-    return JsonResponse({"message": "QR-код успішно видалено"}, status=200)
-
-def create_qr_code(request,error = False):
+# django.core.handlers.wsgi.WSGIRequest
+def create_qr_code(request:WSGIRequest,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')
     try:
@@ -111,7 +97,7 @@ def create_qr_code(request,error = False):
     return filename
 # Create your views here.
 @login_required  
-def render_create_qr_cods(request):
+def render_create_qr_cods(request:WSGIRequest):
     error = ''
     name = None
     if request.method == "POST":
@@ -120,9 +106,9 @@ def render_create_qr_cods(request):
             
             count = len(QR_CODE.objects.filter(profile=request.user))
             subscription = Profile.objects.get(user = request.user).subcription
-            # if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
-            #     error = ''
-            if count > 0 and subscription == "free":
+            if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
+                error = "Qr-code з таким ім'ям вже був створений"
+            elif count > 0 and subscription == "free":
                 error = 'you cannot have more qr codes, it is limit of your subscription'
             elif count > 9 and subscription == "standart":
                 error = 'you cannot have more qr codes, it is limit of your subscription'
@@ -150,7 +136,8 @@ def render_create_qr_cods(request):
         "url":url
     })
 @login_required
-def render_my_qr_cods(request):
+def render_my_qr_cods(request:WSGIRequest):
+    print(type(request))
     modal = None
     qr_codes = QR_CODE.objects.filter(profile = request.user)
     if request.method == "POST":
@@ -162,7 +149,10 @@ def render_my_qr_cods(request):
             
         elif request.POST.get("del"):
             delete = QR_CODE.objects.get(id=request.POST.get("del"))
+            os.remove(os.path.abspath(__file__+'/../..'+MEDIA_URL+'images/qr_code/'+delete.qr_code.name))
+            # os.remove(delete.qr_code.path)
             delete.delete()
+
         else:
             qr_code = QR_CODE.objects.get(id = request.POST.get("id"))
             qr_code.name = request.POST.get("name")

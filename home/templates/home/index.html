@@ -3,31 +3,46 @@
 {% block link  %} <link rel="stylesheet" href="{% static 'home/style.css'%}"> {% endblock %}
 {% block content %}
     <main>
+        <form method="post">
+            {% csrf_token %}
         <h1>QR-app</h1>
         <section class="plans">
             <div class="plan">
                 <h2>Free</h2>
                 <p>cost: 0$/month</p>
                 <p>max-count QR: 1</p>
-                <button id="current">current</button>
+                {% if subscription == 'free' %}
+                    <button id="current" value="free" name="subscription">current</button>
+                {% else %}
+                    <button value="free" name="subscription">confirm</button>
+                {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
             <div class="plan">
                 <h2>Standart</h2>
                 <p>cost: 2$/month</p>
                 <p>max-count QR: 10</p>
-                <button>confirm</button>
+                {% if subscription == 'standart' %}
+                    <button id="current" value="standart" name="subscription">current</button>
+                {% else %}
+                    <button value="standart" name="subscription">confirm</button>
+                {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
             <div class="plan">
                 <h2>Pro</h2>
                 <p>cost: 10$/month</p>
                 <p>max-count QR: 100</p>
-                <button>confirm</button>
+                {% if subscription == 'pro' %}
+                    <button id="current" value="pro" name="subscription">current</button>
+                {% else %}
+                    <button value="pro" name="subscription">confirm</button>
+                {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
 
         </section>
+    </form>
     </main>
 
 {% endblock %}

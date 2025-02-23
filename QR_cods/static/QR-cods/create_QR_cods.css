@@ -36,6 +36,9 @@ input, button, select, option{
     position: relative;
     display: inline-block;
 }
+.color::-webkit-color-swatch {
+    border-radius: 25px;
+  }
 /* .custom-select{
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
@@ -52,6 +55,10 @@ input, button, select, option{
     background-color: rgb(121, 121, 223);
     color: rgb(255, 255, 255);
     border-radius: 10px;
+    
+}
+.colors{
+    display: flex;
 }
 .custom-select option[value="gradient"] {
     background-color: #21A0DF;
@@ -137,4 +144,5 @@ img{
 .hidden{
     /* display: none; */
     opacity: 0;
+    visibility: hidden;
 }

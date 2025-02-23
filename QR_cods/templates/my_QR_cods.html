@@ -44,7 +44,7 @@
             <div class="qr-card" id = "{{qr.name}}">
                 <img src="{{ MEDIA_URL }}images/qr_code/{{qr.qr_code}}" alt="QR code" class="my-QR-code">
                 <p class="text-for-QR-code">{{qr.name}}</p>
-                <p>{{qr.date_of_creation}}</p>
+                <p>created: {{qr.date_of_creation}}</p>
 
                     <form method="post">
                         {% csrf_token %}

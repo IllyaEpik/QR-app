@@ -217,10 +217,13 @@ input, textarea{
 .delete{
     display: flex;
     align-items: center;
-    color: #865226;
+    color: #850000;
+}
+.delete:hover{
+    color: hsl(0, 100%, 50%);
 }
 .download{
-    color: #291ba5;
+    color: #ffffff;
 }
 .my-QR-cods{
     background-color:  #21A0DF;

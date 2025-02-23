@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
 from .models import Profile
+from django.core.handlers.wsgi import WSGIRequest
 # Create your views here.
 
-def authorization(request):
+def authorization(request:WSGIRequest):
         error = ""
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -19,7 +20,7 @@ def authorization(request):
         
         return render(request,template_name= "user/authorization.html", context={"error": error})
     
-def registration(request):
+def registration(request:WSGIRequest):
     add = ""
     if request.method == "POST":
         try:
@@ -38,7 +39,7 @@ def registration(request):
             add = "Username already excists"
     return render(request,template_name= "user/registration.html", context={"add": add})
 
-def logout_user(request):
+def logout_user(request:WSGIRequest):
     logout(request)
     return redirect('auth')
 
