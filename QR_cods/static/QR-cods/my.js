@@ -27,12 +27,3 @@ function togglePopup(){
     bg.classList.toggle("show")
     modal.classList.toggle("show")
 }
-
-
-
-
-
-
-
-
-

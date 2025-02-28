@@ -66,6 +66,8 @@ def create_qr_code(request:WSGIRequest,error = False):
                         g = int(color1[1] + (color2[1] - color1[1]) * w / size)
                         b = int(color1[2] + (color2[2] - color1[2]) * w / size)
                         img.putpixel((w,h),(r,g,b))
+
+        img = qr.make_image(fill_color=request.POST.get('color'), back_color=request.POST.get('background_color')).convert('RGB')
     if 'logo' in request.FILES and not error:
         # logo_file = request.FILES['logo']
         # logo_path = default_storage.save(f"logos/{logo_file.name}", ContentFile(logo_file.read()))
@@ -170,10 +172,12 @@ def render_my_qr_cods(request:WSGIRequest):
             qr_code.name = request.POST.get("name")
             qr_code.description = request.POST.get("description")
             qr_code.save()
-        
+
     # print(modal)
     return render(request, template_name='my_QR_cods.html',context={
         'qr_codes':qr_codes,
         'MEDIA_URL':MEDIA_URL,
         'modal': modal
+
     })
+
