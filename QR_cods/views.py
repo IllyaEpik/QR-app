@@ -11,8 +11,20 @@ import matplotlib.colors as mc
 from django.http import HttpResponse
 from django.core.handlers.wsgi import WSGIRequest
 import base64, io
-from django.shortcuts import render
-# django.core.handlers.wsgi.WSGIRequest
+from django.shortcuts import render, redirect
+from .models import Subscription
+from .forms import SubscriptionForm
+# from django.core.handlers.wsgi.WSGIRequest
+@login_required
+def subscribe(request):
+    user_subscription, created = Subscription.objects.get_or_create(user=request.user)
+
+    if request.method == "POST":
+        form = SubscriptionForm(request.POST, instance=user_subscription)
+        if form.is_valid():
+            form.save()
+            return redirect("subscription_success")
+
 def create_qr_code(request:WSGIRequest,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')
