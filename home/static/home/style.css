@@ -43,3 +43,11 @@ button{
     border: solid #21A0DF 1px;
     border-radius: 100px;
 }
+.site{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30;
+    margin-top: 20px;
+    padding: 10px;
+} 

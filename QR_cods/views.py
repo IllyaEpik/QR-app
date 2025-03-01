@@ -38,7 +38,10 @@ def create_qr_code(request:WSGIRequest,error = False):
         border=4,
         error_correction=qrcode.constants.ERROR_CORRECT_H
     )
-    qr.add_data(request.POST.get('url'))
+    if request.POST.get("type-qr") == "desktop":
+        qr.add_data(request.POST.get('url'))
+    else:
+        qr.add_data(redirect("qr-1"))
     qr.make(fit=True)
     
     if error:
@@ -103,7 +106,10 @@ def create_qr_code(request:WSGIRequest,error = False):
         img = QR_CODE.objects.create(profile = request.user,
                             name = request.POST.get('name'),
                             qr_code = filename,
-                            description = '')
+                            description = '',
+                            url = request.POST.get('url'),
+                            desktop = request.POST.get('type-qr'),
+                            )
     else:
         ok = io.BytesIO()
         img.save(ok,format="PNG")

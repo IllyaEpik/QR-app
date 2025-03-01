@@ -145,3 +145,7 @@ img{
     opacity: 0;
     visibility: hidden;
 }
+.type-of-qr{
+    background-color: #4A90E2;
+    color: white;
+}
