@@ -3,8 +3,11 @@
 {% block link  %} <link rel="stylesheet" href="{% static 'home/style.css'%}"> {% endblock %}
 {% block content %}
     <main>
-        <form method="post">
+        <form method="post" action="{% url 'subscribe' %}">
             {% csrf_token %}
+            {{ form.as_p }}
+            <!-- <button type="submit">subscribe</button> -->
+        </form>
         <h1>QR-app</h1>
         <section class="plans">
             <div class="plan">

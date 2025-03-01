@@ -11,8 +11,20 @@ import matplotlib.colors as mc
 from django.http import HttpResponse
 from django.core.handlers.wsgi import WSGIRequest
 import base64, io
-from django.shortcuts import render
-# django.core.handlers.wsgi.WSGIRequest
+from django.shortcuts import render, redirect
+from .models import Subscription
+from .forms import SubscriptionForm
+# from django.core.handlers.wsgi.WSGIRequest
+@login_required
+def subscribe(request):
+    user_subscription, created = Subscription.objects.get_or_create(user=request.user)
+
+    if request.method == "POST":
+        form = SubscriptionForm(request.POST, instance=user_subscription)
+        if form.is_valid():
+            form.save()
+            return redirect("subscription_success")
+
 def create_qr_code(request:WSGIRequest,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')
@@ -54,6 +66,8 @@ def create_qr_code(request:WSGIRequest,error = False):
                         g = int(color1[1] + (color2[1] - color1[1]) * w / size)
                         b = int(color1[2] + (color2[2] - color1[2]) * w / size)
                         img.putpixel((w,h),(r,g,b))
+
+        img = qr.make_image(fill_color=request.POST.get('color'), back_color=request.POST.get('background_color')).convert('RGB')
     if 'logo' in request.FILES and not error:
         # logo_file = request.FILES['logo']
         # logo_path = default_storage.save(f"logos/{logo_file.name}", ContentFile(logo_file.read()))
@@ -158,10 +172,12 @@ def render_my_qr_cods(request:WSGIRequest):
             qr_code.name = request.POST.get("name")
             qr_code.description = request.POST.get("description")
             qr_code.save()
-        
+
     # print(modal)
     return render(request, template_name='my_QR_cods.html',context={
         'qr_codes':qr_codes,
         'MEDIA_URL':MEDIA_URL,
         'modal': modal
+
     })
+
