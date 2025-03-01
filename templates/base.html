@@ -27,8 +27,10 @@
                 <div class="my-QR-cods"><a href="{% url 'my_qr_cods' %}">my QR-codes</a></div>
                 <div class="contacts"><a href="{% url 'contacts' %}">contacts</a></div>
                 {% if request.user.username %}
+                <img src="{% static 'images/icon.png' %}" alt="" class="icon">
                 {% endif %}
             </nav>
+            
         </header>
         {% block content %}
          

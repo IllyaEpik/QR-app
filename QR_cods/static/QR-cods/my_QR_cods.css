@@ -19,6 +19,7 @@ nav li {
 }
 h1{
     font-size: 60px;
+    text-align: center;
 }
 .active {
     font-weight: bold;
@@ -27,8 +28,19 @@ h1{
 main {
     text-align: center;
     padding: 20px;
+    overflow-y:auto;
+    /* height: max-content; */
+    /* flex-grow: 1; */
+    max-height: 89vh;
 }
-
+body{
+    max-height: 100%;
+    
+    
+}
+header{
+    width: 100hv;
+}
 .qr-codes {
     display: flex;
     flex-wrap: wrap;

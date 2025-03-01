@@ -8,13 +8,13 @@
 
 <body>
     <main>
-
         <h1>my QR-codes</h1>
         
         <div class="filter-div">
-            <input type="text" placeholder="Enter text">
+            <input type="text" placeholder="Enter QR name">
             <button class="filter">Filter</button>
         </div>
+
         {% if modal %}
         <div class="modal show" id="modal">
             <button class="close" id="close">×</button>
@@ -64,9 +64,9 @@
                 <p class="text-for-QR-code">QR-code for web-site</p>
             </div> -->
         </section>
+        <button class="url-to-create">
+            <a href="{% url 'create_qr_cods' %}" class="go">create QR-code</a>
+        </button>
     </main>
-    <button class="url-to-create">
-    <a href="{% url 'create_qr_cods' %}" class="go">create QR-code</a>
-</button>
 </body>
 {% endblock %}
