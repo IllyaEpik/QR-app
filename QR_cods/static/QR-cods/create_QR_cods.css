@@ -145,7 +145,18 @@ img{
     opacity: 0;
     visibility: hidden;
 }
-.type-of-qr{
-    background-color: #4A90E2;
+/* .type-of-qr{ */
+    /* background-color: #4A90E2; */
+    /* color: white; */
+/* } */
+
+.type-of-qr option[value="standart"] {
+    background-color: rgb(121, 121, 223);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.type-of-qr option[value="desktop"] {
+    background-color: #21A0DF;
     color: white;
+    border-radius: 10px;
 }

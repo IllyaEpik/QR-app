@@ -30,8 +30,9 @@ urlpatterns = [
     path('user/',include("user.urls")),
     path('contacts', view=view_contacts, name="contacts"),
     path('QR_cods/',include("QR_cods.urls")),
-    path('subscriptions/',view_subscriptions),
-    path('block/', redirection)
+    path('subscriptions/',view_subscriptions, name= 'subs'),
+    # path('block/', redirection),
+    path('block/<int:qr_id>/', redirection, name='redirection'),
     # path('qr_cods/', view=render_qr_cods, name="create_qr_cods"),
     # path('qr_cods/', view=render_qr_cods, name="create_qr_cods")
 ]

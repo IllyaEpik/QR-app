@@ -11,16 +11,34 @@ def view_subscriptions(request:WSGIRequest):
     if request.method == 'POST':
         if request.user.username:
             profile = Profile.objects.get(user=request.user)
+            sub = request.POST.get('subscription')
+            ok = {
+                'standart':10,
+                'pro':100,
+                'free':1
+            }
             profile.subcription = request.POST.get('subscription')
             profile.save()
+            
+            count = ok[sub]
+            for qr in QR_CODE.objects.filter(profile = request.user):
+                if count > 0:
+                    count -= 1
+                    if qr.blocked:
+                        qr.blocked = False
+                        qr.save()
+                else:
+                    qr.blocked = True
+                    qr.save()
         else:
             return redirect('auth')
     if request.user.username:
         subscription = Profile.objects.get(user=request.user).subcription
     return render(request,template_name= "subscriptions/index.html", context={'subscription':subscription})
-def redirection(request:WSGIRequest, id):
-    qr = QR_CODE.objects.get(id = id)
+def redirection(request:WSGIRequest, qr_id):
+    print(QR_CODE.objects.get)
+    qr = QR_CODE.objects.get(id = qr_id)
     if qr.blocked:
-        return qr.url
+        return render(request, template_name='subscriptions/block.html')
     else:
-        return 
+        return redirect(qr.url)

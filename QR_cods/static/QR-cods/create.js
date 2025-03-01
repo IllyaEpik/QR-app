@@ -3,7 +3,7 @@ let inputs = document.querySelectorAll('input')
 let color1 = document.querySelectorAll('.color')
 let two = document.querySelector('#two')
 let back = document.querySelector('.back')
-let select = document.querySelector('select')
+let select = document.querySelector('.custom-select')
 for (let c of color1){
     c.style.width = name1.clientWidth/3
     c.style.height = name1.clientHeight
@@ -27,6 +27,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
 })
 console.log(localStorage.getItem('url'))
 inputs[1].value = localStorage.getItem('url')
+
 inputs[2].value = localStorage.getItem('name')
 inputs[3].value = localStorage.getItem('color')
 inputs[4].value = localStorage.getItem('color-gradient')

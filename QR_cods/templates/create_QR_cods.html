@@ -15,13 +15,10 @@
             <div class="buttons">
                 <input type="text" placeholder="url" required name="url">
                 <input type="text" placeholder="name" required name="name">
+                
                 <select  class="custom-select" name="type">
                     <option value="color">color</option>
                     <option value="gradient">gradient</option>
-                </select>
-                <select name="type-qr" class="type-of-qr">
-                    <option value="standarts">standart</option>
-                    <option value="desktop">desktop</option>
                 </select>
                 <span class="colors">color:<input type="color" placeholder="color" name="color" class="color"><input type="color" placeholder="color" name="color_2" class="color hidden" id="two"></span>
                 <span>background color:<input type="color" placeholder="background color" name="background_color" class="color back" value="#FFFFFF"></span>
@@ -43,6 +40,10 @@
                         <button class="download" name="button" value="check">check</button>
                         <button class="create" name="button" value="create">create</button>
                     </div>
+                    <select name="type-qr" class="type-of-qr">
+                        <option value="standart">standart</option>
+                        <option value="desktop">desktop</option>
+                    </select>
                     <p>{{error}}</p>
                 </div>
             </div>

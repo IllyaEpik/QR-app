@@ -2,23 +2,19 @@
 {% load static %}
 {% block link  %} <link rel="stylesheet" href="{% static 'home/style.css'%}"> {% endblock %}
 {% block content %}
-    <main>
-        <form method="post" action="{% url 'subscribe' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <!-- <button type="submit">subscribe</button> -->
-        </form>
-        <h1>QR-app</h1>
-        <p class="site">Цей сайт створений для того щоб людина могла створювати Qr-code на любий смак і колір.На цьому сайті ви можете створити як і звичайний Qr-code, так і градіентний(такою функцією не кожен сайт можуть похизуватись)</p>
-        <section class="plans">
-            <div class="plan">
-                <h2>Free</h2>
-                <p>cost: 0$/month</p>
+<main>
+    
+    <h1>QR-app</h1>
+    
+    <section class="plans">
+        <div class="plan">
+            <h2>Free</h2>
+            <p>cost: 0$/month</p>
                 <p>max-count QR: 1</p>
                 {% if subscription == 'free' %}
-                    <button id="current" value="free" name="subscription">current</button>
+                <button id="current" value="free" name="subscription">current</button>
                 {% else %}
-                    <button value="free" name="subscription">confirm</button>
+                <button value="free" name="subscription">confirm</button>
                 {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
@@ -27,9 +23,9 @@
                 <p>cost: 2$/month</p>
                 <p>max-count QR: 10</p>
                 {% if subscription == 'standart' %}
-                    <button id="current" value="standart" name="subscription">current</button>
+                <button id="current" value="standart" name="subscription">current</button>
                 {% else %}
-                    <button value="standart" name="subscription">confirm</button>
+                <button value="standart" name="subscription">confirm</button>
                 {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
@@ -38,15 +34,16 @@
                 <p>cost: 10$/month</p>
                 <p>max-count QR: 100</p>
                 {% if subscription == 'pro' %}
-                    <button id="current" value="pro" name="subscription">current</button>
+                <button id="current" value="pro" name="subscription">current</button>
                 {% else %}
-                    <button value="pro" name="subscription">confirm</button>
+                <button value="pro" name="subscription">confirm</button>
                 {% endif %}
                 <a href="/subscriptions" class="go">go to description</a>
             </div>
-
+            
         </section>
     </form>
+    <p class="site">This site is created so that people can create a Qr code for their favorite flavor and color. On this site you can open both the regular Qr code and the gradient one (such functions cannot be learned)</p>
     </main>
 
 {% endblock %}

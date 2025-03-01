@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import QR_CODE
 from user.models import Profile
 from QR_app.settings import MEDIA_URL
 from PIL import Image
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse
 from django.http import JsonResponse
 import qrcode, os
 import matplotlib.colors as mc
@@ -12,18 +12,18 @@ from django.http import HttpResponse
 from django.core.handlers.wsgi import WSGIRequest
 import base64, io
 from django.shortcuts import render, redirect
-from .models import Subscription
-from .forms import SubscriptionForm
+# from .models import Subscription
+# from .forms import SubscriptionForm
 # from django.core.handlers.wsgi.WSGIRequest
 @login_required
-def subscribe(request):
-    user_subscription, created = Subscription.objects.get_or_create(user=request.user)
+# def subscribe(request):
+#     user_subscription, created = Subscription.objects.get_or_create(user=request.user)
 
-    if request.method == "POST":
-        form = SubscriptionForm(request.POST, instance=user_subscription)
-        if form.is_valid():
-            form.save()
-            return redirect("subscription_success")
+#     if request.method == "POST":
+#         form = SubscriptionForm(request.POST, instance=user_subscription)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("subscription_success")
 
 def create_qr_code(request:WSGIRequest,error = False):
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
@@ -38,10 +38,26 @@ def create_qr_code(request:WSGIRequest,error = False):
         border=4,
         error_correction=qrcode.constants.ERROR_CORRECT_H
     )
-    if request.POST.get("type-qr") == "desktop":
-        qr.add_data(request.POST.get('url'))
+    if request.POST.get('button') == 'create':
+        desktop = False
+        if request.POST.get("type-qr") == "desktop":
+            desktop = True
+        img = QR_CODE.objects.create(profile = request.user,
+            name = request.POST.get('name'),
+            qr_code = filename,
+            description = '',
+            url = request.POST.get('url'),
+            desktop = desktop,
+            blocked = False
+        )
+        if request.POST.get("type-qr") == "desktop":
+            qr.add_data(request.POST.get('url'))
+        else:
+            qr.add_data(request.build_absolute_uri(reverse("redirection",kwargs={'qr_id': img.id})))
     else:
-        qr.add_data(redirect("qr-1"))
+        ok = io.BytesIO()
+        img.save(ok,format="PNG")
+        filename = base64.b64encode(ok.getvalue()).decode("utf-8")
     qr.make(fit=True)
     
     if error:
@@ -103,17 +119,6 @@ def create_qr_code(request:WSGIRequest,error = False):
         img.paste(logo, pos)
     if request.POST.get('button') == 'create':
         img.save(path) 
-        img = QR_CODE.objects.create(profile = request.user,
-                            name = request.POST.get('name'),
-                            qr_code = filename,
-                            description = '',
-                            url = request.POST.get('url'),
-                            desktop = request.POST.get('type-qr'),
-                            )
-    else:
-        ok = io.BytesIO()
-        img.save(ok,format="PNG")
-        filename = base64.b64encode(ok.getvalue()).decode("utf-8")
     return filename
 # Create your views here.
 @login_required  
@@ -127,7 +132,7 @@ def render_create_qr_cods(request:WSGIRequest):
             count = len(QR_CODE.objects.filter(profile=request.user))
             subscription = Profile.objects.get(user = request.user).subcription
             if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
-                error = "Qr-code з таким ім'ям вже був створений"
+                error = "Qr-code with this name been created, you can't create two QR codes with same name"
             elif count > 0 and subscription == "free":
                 error = 'you cannot have more qr codes, it is limit of your subscription'
             elif count > 9 and subscription == "standart":
@@ -169,7 +174,10 @@ def render_my_qr_cods(request:WSGIRequest):
             
         elif request.POST.get("del"):
             delete = QR_CODE.objects.get(id=request.POST.get("del"))
-            os.remove(os.path.abspath(__file__+'/../..'+MEDIA_URL+'images/qr_code/'+delete.qr_code.name))
+            try:
+                os.remove(os.path.abspath(__file__+'/../..'+MEDIA_URL+'images/qr_code/'+delete.qr_code.name))
+            except:
+                pass
             # os.remove(delete.qr_code.path)
             delete.delete()
 
