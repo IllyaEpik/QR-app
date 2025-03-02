@@ -40,7 +40,8 @@
         {% endif %}
         <section class="qr-codes">
             {% for qr in qr_codes %}
-            <div class="qr-card" id = "{{qr.name}}">
+            
+            <div class="qr-card block-{{qr.blocked}} desktop-{{qr.desktop}}" id = "{{qr.name}}">
                 <img src="{{ MEDIA_URL }}images/qr_code/{{qr.qr_code}}" alt="QR code" class="my-QR-code">
                 <p class="text-for-QR-code">{{qr.name}}</p>
                 <p>created: {{qr.date_of_creation}}</p>
@@ -49,11 +50,9 @@
                         {% csrf_token %}
                         <button name="id" value="{{qr.id}}" class="details">details</button>
                     </form>
-                    
-                    
                     </div>
                 </div>
-                {% endfor %}
+            {% endfor %}
             <!-- <div class="qr-card">
                 <img src="{% static 'images/qr_code.png' %}" alt="QR code" class="my-QR-code">
                 <p class="text-for-QR-code">QR-code for web-site</p>

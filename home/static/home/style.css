@@ -25,6 +25,27 @@ h1{
     gap: 10px;
     font-weight: 400px;
 }
+.poko {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 48px;
+    color: white;
+    font-size: 30px;
+    padding: 10 47;
+    gap: 10px;
+    font-weight: 400px;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 50px;
+}
+.red{
+    color: yellow;
+}
 .go{
     font-size: 15px;
     color: #0015FF;
@@ -47,8 +68,9 @@ button{
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     font-size: 40;
-    margin-top: 100px;
+    margin-top: 200px;
     padding: 10px;
-    width: 600px;
+    /* width: 600px; */
 } 

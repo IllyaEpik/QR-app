@@ -31,7 +31,7 @@ def registration(request:WSGIRequest):
             email = request.POST.get("email")
             if password == confirm_password:
                 user = User.objects.create_user( username=username, password=password,email=email)
-                Profile.objects.create(user=user,subcription='free')
+                Profile.objects.create(user=user,subcription='free',desktop_QR = 0)
             else:
                 add = "passwords don't match"
         except IntegrityError:

@@ -2,10 +2,20 @@
 {% load static %}
 {% block link  %} <link rel="stylesheet" href="{% static 'subscriptions/style.css'%}"> {% endblock %}
 {% block content %}
+	<form method="post" class="hidden form">
+		{% csrf_token %}
+		<h2>Are you sure what you want to buy subscription</h2>
+		<span></span>     
+		<input type="text" name="subscription" hidden id="hide">
+		<input type="text" name="card" id="" placeholder="card number">
+		<input type="text" placeholder="CVV" name="CVV">
+		<button >Confirm</button>
+  	</form>
+	<div class="bg hidden"></div>
     <div class="content">
       <h1>subscriptions</h1>
-      <form method="post">
-        {% csrf_token %}
+      <!-- <form method="post"> -->
+        
       <div class="plans">
        
         <div class="plan">
@@ -62,7 +72,22 @@
           {% endif %}
           
         </div>
-      </div></form>
-    </div>
+		<!-- <form method="post"> -->
+		<div class="plan">
+            <div class="color-div pro-color-div">
+                <h2>desktop</h2>
+            </div>
+          <input type="number" class="count" min="1" required>
+          <p>infinity time</p>
+          <p>✔️</p>
+          <p>10$/1 QR</p>
+		<button class="buy" value="desktop" name="subscription">buy</button>
 
+          
+        </div>
+	<!-- </form> -->
+      </div>
+	<!-- </form> -->
+    </div>
+	<script src="{% static 'subscriptions/script.js'%}"></script>
 {% endblock %}

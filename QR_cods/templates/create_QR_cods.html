@@ -8,18 +8,21 @@
 
 <h1>Create QR-codes</h1>
 <form method="post" enctype="multipart/form-data">
-
-
+    
+    
     {% csrf_token %}
     <main>
-            <div class="buttons">
-                <input type="text" placeholder="url" required name="url">
-                <input type="text" placeholder="name" required name="name">
-                
-                <select  class="custom-select" name="type">
-                    <option value="color">color</option>
-                    <option value="gradient">gradient</option>
-                </select>
+        <div class="buttons">
+            <input type="text" placeholder="url" required name="url">
+            <input type="text" placeholder="name" required name="name">
+            
+            <select  class="custom-select" name="type">
+                <option value="color">color</option>
+                <option value="gradient">gradient</option>
+            </select>
+            <div class="block" id="{{ subcription }}">
+                <p>this content blocked because you don't use desktop QR and your subscription is free</p>
+            </div>
                 <span class="colors">color:<input type="color" placeholder="color" name="color" class="color"><input type="color" placeholder="color" name="color_2" class="color hidden" id="two"></span>
                 <span>background color:<input type="color" placeholder="background color" name="background_color" class="color back" value="#FFFFFF"></span>
 
@@ -44,7 +47,8 @@
                         <option value="standart">standart</option>
                         <option value="desktop">desktop</option>
                     </select>
-                    <p>{{error}}</p>
+                    <p>you can create {{ desktop_QR }} desktop QR-codes</p>
+                    <p class="error" >{{error}}</p>
                 </div>
             </div>
         </main>

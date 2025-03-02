@@ -15,7 +15,8 @@ a:hover{
     transition: 0.3s;
 }
 body{
-    background: linear-gradient(to right, #9AB7FF, #ffffff);
+    background: linear-gradient(to top,#ffffff, #9AB7FF, #ffffff);
+    /* background: linear-gradient(to top,#9AB7FF, #ffffff, #9AB7FF); */
     /* border-top: 3px solid #000000; */
     margin-left: 0;
     margin-right: 0;
