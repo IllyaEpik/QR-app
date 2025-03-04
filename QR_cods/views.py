@@ -96,7 +96,7 @@ def create_qr_code(request:WSGIRequest,error = False):
             color1 = mc.to_rgb(request.POST.get("color"))
             color2 = mc.to_rgb(request.POST.get("color_2"))
             color1 = (color1[0]*255,color1[1]* 255,color1[2]* 255)
-            color2 = (color2[0]* 255,color2[1]* 255,color2[2]* 255 )
+            color2 = (color2[0]* 255,color2[1]* 255,color2[2]* 255)
             # print('hohooh')
             for h in range(size):
                 for w in range(size):
@@ -106,6 +106,11 @@ def create_qr_code(request:WSGIRequest,error = False):
                         g = int(color1[1] + (color2[1] - color1[1]) * w / size)
                         b = int(color1[2] + (color2[2] - color1[2]) * w / size)
                         img.putpixel((w,h),(r,g,b))
+            # for h in range(size):
+            #     for w in range(size):
+                    
+            #         if img.getpixel((w,h)) == color:
+            #             img.putpixel((w,h),(two_color))
             ok = io.BytesIO()
             img.save(ok,format="PNG")
             filename = base64.b64encode(ok.getvalue()).decode("utf-8")
