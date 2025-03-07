@@ -172,7 +172,7 @@ graph TD
   ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
   ### QR_coda/admin.py
   --- використовується для відображення ваших моделей на панелі адміністратора Django
-  ### QR_cods/ __init__.py
+  ### QR_cods/__init__.py
   --- Цей файл ми не використовували
   ### QR_cods/templates/create_QR_cods.html
   --- У цьому файлі ми створюємо сторінку Create QR-codes
@@ -196,7 +196,7 @@ graph TD
   ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
   ## home/admin.py
   --- використовується для відображення ваших моделей на панелі адміністратора Django
-  ## home/ init.py
+  ## home/init.py
   --- Цей файл ми не використовували
   ## home/templates/index.html
   --- У цьому файлі ми створюємо сторінку home
@@ -213,12 +213,45 @@ graph TD
   ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
   ## contacts/admin.py
   --- використовується для відображення ваших моделей на панелі адміністратора Django, але його ми не використовували
-  ## contacts/ init.py
+  ## contacts/init.py
   --- Цей файл ми не використовували
   ## contacts/templates/contacts/index.html
   --- У цьому файлі ми створюємо сторінку home
   ## contacts/static/contacts/style.css
   --- У цьому файлі ми задаемо вигляду сторінці home
+
+
+  ## user/views.py
+  --- У цьому файлі ми створюємо функції відображення authorization,registration, logout_user
+  ## user/admin.py
+  --- використовується для відображення ваших моделей на панелі адміністратора Django
+  ## user/apps.py
+  --- Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
+  ## user/models.py
+  --- У цьому файлі ми сворюємо модель Profile
+  ## user/tests.py
+  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
+  ## user/urls.py
+  --- У ньому ми створюємо url ссилки для сайту
+  ## user/templates/user/authorization.html
+  --- У цьому файлі ми створюємо сторінку авторизації
+  ## user/templates/user/registration.html
+  --- У цьому файлі ми створюємо сторінку регистрации 
+  ## user/static/user/style.css
+  --- У цьому файлі ми задаемо вигляду сторінці авторизації
+  ## user/static/user/style1.css
+  ---У цьому файлі ми задаемо вигляду сторінці реєстрації
+## /manage.py
+--- Файл /manage.py є основним командним сценарієм проекту Django. 
+Запускає локальний сервер, виконує міграції бази даних. Це ключовий інструмент для управління проектами Django!
+## templates/base.html
+---base.html у вашому проекті є базовим шаблоном для всіх сторінок HTML. Який використовується в Django для організації та повторного використання структури веб-сторінок.
+
+## .gitignore
+---Файл .gitignore використовується для ігнорування певних файлів і папок під час завантаження проекту в Git.
+
+##- db.sqlite3
+--Файл db.sqlite3 — це база даних SQLite, яка використовується Django за замовчуванням. Він захищає всі дані вашого проекту (користувачі, записи, моделі). --SQLite — це легка база даних, яка не потребує налаштування сервера, використовується для локальної розробки та тестування.
   
 # Description of all files:
 
@@ -273,7 +306,7 @@ graph TD
   ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
   ## home/admin.py
   --- used to display your models in the Django admin panel
-  ## home/ init.py
+  ## home/init.py
   --- We did not use this file
   ## home/templates/index.html
   --- In this file we create the home page
@@ -289,17 +322,36 @@ graph TD
   ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
   ## contacts/admin.py
   --- used to display your models in the Django admin panel, but we didn't use it
-  ## contacts/ init.py
+  ## contacts/init.py
   --- We didn't use this file
   ## contacts/templates/contacts/index.html
   --- In this file we create the home page
   ## contacts/static/contacts/style.css
   --- In this file we set the look of the home page
+
+  ## user/views.py
+  --- In this file we create the authorization,registration,logout_user view functions
+  ## user/admin.py
+  --- used to display your models in the Django admin panel
+  ## user/apps.py
+  --- This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the configuration of the Django application.
+  ## user/models.py
+  --- In this file we create the Profile model
+  ## user/tests.py
+  --- We did not use this file, but if you plan to use it, it is used for tests
+  ## user/urls.py
+  --- In it we create a url link for the site
+  ## user/templates/user/authorization.html
+  --- In this file we create an authorization page
+  ## user/templates/user/registration.html
+  --- In this file we create a registration page 
+  ## user/static/user/style.css
+  --- In this file we set the appearance of the authorization page
+  ## user/static/user/style1.css
+  --- In this file we set the appearance of the registration page
+
 ## templates/base.html
 base.html file in your project is the base template for all HTML pages. Which is used in Django to organize and reuse the structure of web pages.
-
-## user
-User folder is a Django user management application. It contains models, views, routes (urls.py), static files (CSS) and templates necessary for working with users.
 
 ## .gitignore
 .gitignore file is used to ignore certain files and folders when uploading a project to Git.
@@ -307,8 +359,7 @@ User folder is a Django user management application. It contains models, views, 
 ## db.sqlite3
 db.sqlite3 file is the SQLite database used by Django by default. It protects all the data of your project (users, records, models). SQLite is a lightweight database that does not require server configuration, used for local development and testing.
 
-## image-1.png
 
-## manage.py
-The manage.py file is the main command script of the Django project. 
+## /manage.py
+The /manage.py file is the main command script of the Django project. 
 Starts the local server, performs migrations database. This is the key tool for Django project management!

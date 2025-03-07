@@ -50,4 +50,7 @@ def redirection(request:WSGIRequest, qr_id):
     if qr.blocked:
         return render(request, template_name='subscriptions/block.html')
     else:
-        return redirect(qr.url)
+        try:
+            return redirect(qr.url)
+        except:
+            return render(request,'subscriptions/copy.html', {'url':qr.url})
