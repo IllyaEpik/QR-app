@@ -142,8 +142,10 @@ graph TD
 
   qr{QR_cods} --> static --> 3[QR-cods] --> create.js --> my_QR_cods.css
   3 --> my.js --> create_QR_cods.css
-  c{contacts} --> static --> contacts --> script.js
-  
+  c{contacts} --> static --> 4[app name] --> script.js
+  subs{subscriptions} --> static
+  subs --> block.html
+  subs --> index.html
 ```
   <!-- 2  sc -->
   <!-- c  img[images] -->
@@ -184,6 +186,10 @@ graph TD
   --- У цьому файлі ми задаемо вигляду сторінці My QR-codes
   ### QR_cods/static/QR-cods/my.js
   --- У ньому ми створюємо "логіку" сторінці My QR-codes
+
+  
+# Description of all files:
+
   ### subcriptions/views.py
   --- Цей код містить дві функції відображення view_subscription(request:WSGIRequest):, які відповідають за обробку підписок користувачів, а також ми створили функцію redirection(request: WSGIRequest, qr_id): ця функція виконує перенаправлення корис
   ### subscription/apps.py
@@ -198,5 +204,3 @@ graph TD
   --- All static files, styles for html, and Java script are located here.
   ### subscription/static/script.js
   --- In this file we create the logic for our "Subscribe" page.
-  
-# Description of all files
