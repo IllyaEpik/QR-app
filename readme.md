@@ -186,7 +186,39 @@ graph TD
   --- У цьому файлі ми задаемо вигляду сторінці My QR-codes
   ### QR_cods/static/QR-cods/my.js
   --- У ньому ми створюємо "логіку" сторінці My QR-codes
+  ## home/views.py
+  --- У цьому файлі ми створюємо функції відображення view_home
+  ## home/tests.py
+  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
+  ## home/models.py
+  --- Тут ми нічого не створювали 
+  ## home/apps.py
+  ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
+  ## home/admin.py
+  --- використовується для відображення ваших моделей на панелі адміністратора Django
+  ## home/ init.py
+  --- Цей файл ми не використовували
+  ## home/templates/index.html
+  --- У цьому файлі ми створюємо сторінку home
+  ## home/static/home/style.css
+  --- У цьому файлі ми задаемо вигляду сторінці home
 
+  ## contacts/views.py
+  --- У цьому файлі ми створюємо функції відображення view_contact
+  ## contacts/tests.py
+  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
+  ## contacts/models.py
+  --- Тут ми нічого не створювали 
+  ## contacts/apps.py
+  ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
+  ## contacts/admin.py
+  --- використовується для відображення ваших моделей на панелі адміністратора Django, але його ми не використовували
+  ## contacts/ init.py
+  --- Цей файл ми не використовували
+  ## contacts/templates/contacts/index.html
+  --- У цьому файлі ми створюємо сторінку home
+  ## contacts/static/contacts/style.css
+  --- У цьому файлі ми задаемо вигляду сторінці home
   
 # Description of all files:
 
@@ -204,7 +236,65 @@ graph TD
   --- All static files, styles for html, and Java script are located here.
   ### subscription/static/script.js
   --- In this file we create the logic for our "Subscribe" page.
+  ### Qr_codes/views.py
+  ------ For this file we have created a function for rendering Qr-codes (render_create_qr_cods, render_my_qr_cods), and we have also created a function for creating Qr-codes (create_qr_code)
+  ### Qr_codes/urls.py
+  --- We are creating URL links for the site
+  ### QR_codes/tests.py
+  --- We didn't use this file, but if you plan to use it, it is used for tests.
+  ### QR_codes/models.py
+  --- In it we create the QR_CODE model
+  ### QR_codes/apps.py
+  ---This file defines the configuration of the application and is used by Django to initialize itself. We also created the SubscriptionConfig class, this class describes the configuration of the Django application
+  ### QR_codes/admin.py
+  --- used to display your models in the Django admin panel
+  ### QR_cods/ __init__.py
+  --- We did not use this file
+  ### QR_cods/templates/create_QR_cods.html
+  --- In this file we create the Create QR-codes page
+  ### QR_cods/templates/my_QR_cods.html
+  --- In this file we create the My QR-code page
+  ### QR_cods/static/QR-cods/create_QR_cods.css
+  --- In this file we set the appearance of the Create QR-codes page
+  ### QR_cods/static/QR-cods/create.js
+  --- In it we create the "logic" of the Create QR-codes page
+  ### QR_cods/static/QR-cods/my_QR_cods.css
+  --- In this file we set the appearance of the My QR-codes page
+  ### QR_cods/static/QR-cods/my.js
+  --- In it we create the "logic" of the My QR-codes page
 
+  ## home/views.py
+  --- In this file we create the view_home display functions
+  ## home/tests.py
+  --- We did not use this file, but if you plan to use it, it is used for tests
+  ## home/models.py
+  --- We did not create anything here 
+  ## home/apps.py
+  ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
+  ## home/admin.py
+  --- used to display your models in the Django admin panel
+  ## home/ init.py
+  --- We did not use this file
+  ## home/templates/index.html
+  --- In this file we create the home page
+  ## home/static/home/style.css
+  --- In this file we set the look of the home page
+  ## contacts/views.py
+  --- In this file we create the view_contact display functions
+  ## contacts/tests.py
+  --- We did not use this file, but if you plan to use it, it is used for tests
+  ## contacts/models.py
+  --- We did not create anything here 
+  ## contacts/apps.py
+  ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
+  ## contacts/admin.py
+  --- used to display your models in the Django admin panel, but we didn't use it
+  ## contacts/ init.py
+  --- We didn't use this file
+  ## contacts/templates/contacts/index.html
+  --- In this file we create the home page
+  ## contacts/static/contacts/style.css
+  --- In this file we set the look of the home page
 ## templates/base.html
 base.html file in your project is the base template for all HTML pages. Which is used in Django to organize and reuse the structure of web pages.
 
