@@ -204,3 +204,21 @@ graph TD
   --- All static files, styles for html, and Java script are located here.
   ### subscription/static/script.js
   --- In this file we create the logic for our "Subscribe" page.
+
+## templates/base.html
+base.html file in your project is the base template for all HTML pages. Which is used in Django to organize and reuse the structure of web pages.
+
+## user
+User folder is a Django user management application. It contains models, views, routes (urls.py), static files (CSS) and templates necessary for working with users.
+
+## .gitignore
+.gitignore file is used to ignore certain files and folders when uploading a project to Git.
+
+## db.sqlite3
+db.sqlite3 file is the SQLite database used by Django by default. It protects all the data of your project (users, records, models). SQLite is a lightweight database that does not require server configuration, used for local development and testing.
+
+## image-1.png
+
+## manage.py
+The manage.py file is the main command script of the Django project. 
+Starts the local server, performs migrations database. This is the key tool for Django project management!
