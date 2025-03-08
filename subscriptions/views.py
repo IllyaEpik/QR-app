@@ -21,7 +21,7 @@ def view_subscriptions(request:WSGIRequest):
             if not ';' in sub:
                 profile.subcription = sub
                 count = ok[sub]
-
+                
                 for qr in QR_CODE.objects.filter(profile = request.user,desktop = False):
                     if count > 0:
                         count -= 1

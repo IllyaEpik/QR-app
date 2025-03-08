@@ -11,6 +11,7 @@
 - [Структура проекту](#структура-проекту--project-sctructure)
 - [Структура Приложений](#структура-приложений--apps-sctructure)
 - [Описання всіх файлів](#описання-всіх-файлів)
+- [Висновок](#висновок)
 ### Organization readme:
 - [Developers of this site:](#developers-of-this-site)
 - [we used these modules develop the site](#we-used-these-modules-develop-the-site)
@@ -18,6 +19,7 @@
 - [Project-sctructure](#структура-проекту--project-sctructure)
 - [Apps sctructure](#структура-приложений--apps-sctructure)
 - [Description of all files](#description-of-all-files)
+- [Conclusion](#conclusion)
 ---
 
 ## Developers of this site:
@@ -95,7 +97,7 @@
 * Write this command to install all necessary modules: `pip install Django qrcode matplotlib pillow`
 * After downloading all the necessary modules, write `python manage.py runserver` or `python3 manage.py runserver` for mac os in the terminal
 
-
+---
 
 ## Структура проекту / Project sctructure 
 
@@ -154,7 +156,7 @@ graph TD
 
 
 
-
+---
 
 
 
@@ -250,8 +252,11 @@ graph TD
 ## .gitignore
 ---Файл .gitignore використовується для ігнорування певних файлів і папок під час завантаження проекту в Git.
 
-##- db.sqlite3
+## db.sqlite3
 --Файл db.sqlite3 — це база даних SQLite, яка використовується Django за замовчуванням. Він захищає всі дані вашого проекту (користувачі, записи, моделі). --SQLite — це легка база даних, яка не потребує налаштування сервера, використовується для локальної розробки та тестування.
+
+
+
   
 # Description of all files:
 
@@ -363,3 +368,12 @@ db.sqlite3 file is the SQLite database used by Django by default. It protects al
 ## /manage.py
 The /manage.py file is the main command script of the Django project. 
 Starts the local server, performs migrations database. This is the key tool for Django project management!
+
+---
+
+# Висновок
+Отже, у цьому проєкті ми навчилися працювати з Django, створювати та налаштовувати QR-коди, а також ефективно використовувати їх як у звичайному режимі, так і у десктопному. Ми вдосконалили свої навички роботи з медіафайлами, навчились правильно їх обробляти та інтегрувати в проєкт. Окрім цього, ми освоїли методи блокування Qr-codes. А також навчилися робити QR-codes градіентими.
+
+
+# Conclusion
+So, in this project we learned how to work with Django, create and configure QR codes, and use them effectively both in normal mode and on desktop devices. We improved our skills in working with media files, learned how to properly process and integrate them into the project. In addition, we mastered methods for blocking Qr-codes. We also learned how to make QR codes with gradients.
