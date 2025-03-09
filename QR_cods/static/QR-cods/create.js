@@ -19,7 +19,7 @@ select.addEventListener('change', function (event) {
         two.classList.remove('hidden')
     }
 })
-if (type.value = localStorage.getItem('type') == 'desktop'){
+if (type.value == localStorage.getItem('type') == 'desktop'){
     block.classList.add('hidden')
 }
 console.log(block.id)
@@ -52,14 +52,15 @@ if (localStorage.getItem('background-color')){
     inputs[5].value = '#FFFFFF'
 }
 inputs[1].value = localStorage.getItem('url')
-
+console.log(localStorage.getItem('type'))
+if (localStorage.getItem('type') != null){
+    console.log(localStorage.getItem('type'))
+    type.value = localStorage.getItem('type')
+}
 inputs[3].value = localStorage.getItem('color')
 inputs[2].value = localStorage.getItem('name')
 inputs[4].value = localStorage.getItem('color-gradient')
-if (localStorage.getItem('type')){
-    type.value = localStorage.getItem('type')
-}
-if (localStorage.getItem('select')!= undefined){
+if (localStorage.getItem('select')){
     select.value = localStorage.getItem('select')
     if (localStorage.getItem('select') == 'gradient'){
         two.classList.remove('hidden')
