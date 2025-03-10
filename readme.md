@@ -254,7 +254,7 @@ graph TD
     * `cd ../..` 
 
 * Write this command to install all necessary modules: `pip install Django qrcode matplotlib pillow` or use `pip3` for mac os
-* 
+* In user.json, specify the details of the administrator you plan to write to.
 * After downloading all the necessary modules, write `python manage.py runserver` or `python3 manage.py runserver` for mac os in the terminal
 
 
