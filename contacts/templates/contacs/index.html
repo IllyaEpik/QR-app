@@ -17,14 +17,14 @@
 </main>
 <footer class="footer">
     <div class="social-icons">
-      <a href=""><img src="{% static 'contacts/images/img/image.png' %}" alt="Facebook"></a>
-      <a href=""><img src="{% static 'contacts/images/img1/image.png' %}" alt="Instagram"></a>
-      <a href=""><img src="{% static 'contacts/images/img2/image.png' %}" alt="Telegram"></a>
-      <a href=""><img src="{% static 'contacts/images/img3/image.png' %}" alt="Twitter"></a>
+      <a href="{{telegram}}"><img src="{% static 'contacts/images/img/image.png' %}" alt="Facebook"></a>
+      <a href="{{instagram}}"><img src="{% static 'contacts/images/img1/image.png' %}" alt="Instagram"></a>
+      <a href="{{facebook}}"><img src="{% static 'contacts/images/img2/image.png' %}" alt="Telegram"></a>
+      <a href="{{ x_or_twiter }}"><img src="{% static 'contacts/images/img3/image.png' %}" alt="Twitter"></a>
     </div>
     <div class="contact-info">
-      <p>write: <a href="mailto:qrapp@gmail.com">qrapp@gmail.com</a></p>
-      <p>call: <a href="tel:+3802352552">+380-235-2552</a></p>
+      <p>write: <a href="mailto:{{gmail}}">{{gmail}}</a></p>
+      <p>call: <a href="tel:{{phone_number}}">{{phone_look}}</a></p>
     </div>
 </footer>
 

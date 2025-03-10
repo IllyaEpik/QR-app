@@ -1,22 +1,37 @@
 # Сайт для створення Qr кодів / Website for creating Qr codes
-
-<!-- ## Назва проекту: QR приложение / name project: QR app -->
-
-
 ---
+<!-- ## Назва проекту: QR приложение / name project: QR app -->
+## Мета створення проєкту:
+ Цей проєкт був створенний для того щоб спростити створення власних QR-кодів для різних потреб користувачів.Він буде корисний як для бізнесу, так і для особистого використання. Завдяки зручному інтерфейсу QR-коди дуже легко створювати, також є багато видів кастомізації.
+
+##  Чим корисний проєкт для користувача?
+ Проєкт для створення QR-кодів корисний тим, що спрощує обмін інформацією та підвищує ефективність взаємодії між людьми та бізнесом.
+ Завдяки зручному інтефрейсу інтерфейсу QR-коди дуже легко створювати. Також є великий обсяг різної кастомізації.
+ Цей проєкт дозволяє швидко, зручно та безпечно передавати інформацію, спрощуючи повсякденні процеси для всіх!
+
+## Purpose of the project:
+This project was created to simplify the creation of your own QR codes for various user needs. It will be useful for both business and personal use. Thanks to the user-friendly interface, QR codes are very easy to create, and there are also many types of customization.
+
+## How is the project useful for the user?
+The project for creating QR codes is useful because it simplifies the exchange of information and increases the efficiency of interaction between people and businesses.
+Thanks to the user-friendly interface, QR codes are very easy to create. There is also a large amount of various customization.
+This project allows you to quickly, conveniently and securely transfer information, simplifying everyday processes for everyone!
+---
+<!-- - [Project-sctructure](#структура-проекту--project-sctructure) -->
 ### Структура readme:
 - [Розробники цього сайту:](#розробники-цього-сайту)
 - [Модулі які ми використовували для розробки сайту](#модулі-які-ми-використовували-для-розробки-сайту)
 - [Як запустити наш проєкт у роботу](#як-запустити-наш-проєкт-у-роботу)
 - [Структура проекту](#структура-проекту--project-sctructure)
 - [Структура Приложений](#структура-приложений--apps-sctructure)
+- [Пояснення кожного застосунку](#детальне-пояснення-кожного-застосунку)
+<!-- Детальне пояснення кожного застосунку -->
 - [Описання всіх файлів](#описання-всіх-файлів)
 - [Висновок](#висновок)
 ### Organization readme:
 - [Developers of this site:](#developers-of-this-site)
 - [we used these modules develop the site](#we-used-these-modules-develop-the-site)
 - [How to get our project up and running](#how-to-get-our-project-up-and-running)
-- [Project-sctructure](#структура-проекту--project-sctructure)
 - [Apps sctructure](#структура-приложений--apps-sctructure)
 - [Description of all files](#description-of-all-files)
 - [Conclusion](#conclusion)
@@ -44,98 +59,9 @@
 
 ---
 
-## Мета створення проєкту:
- Цей проєкт був створенний для того щоб спростити створення власних QR-кодів для різних потреб користувачів.Він буде корисний як для бізнесу, так і для особистого використання. Завдяки зручному інтерфейсу QR-коди дуже легко створювати, також є багато видів кастомізації.
-
-##  Чим корисний проєкт для користувача?
- Проєкт для створення QR-кодів корисний тим, що спрощує обмін інформацією та підвищує ефективність взаємодії між людьми та бізнесом.
- Завдяки зручному інтефрейсу інтерфейсу QR-коди дуже легко створювати. Також є великий обсяг різної кастомізації.
- Цей проєкт дозволяє швидко, зручно та безпечно передавати інформацію, спрощуючи повсякденні процеси для всіх!
-
-
-## Детальне пояснення кожного застосунку:
-
-  * home - головна сторінка сайту.
-    Мета це забезпечення основної навігації по сайту та загальної інформації.
-    Призначення: 
-      Відображення головної сторінки.
-      Інтеграція з іншими застосунками (контакти, підписки, генерація QR-кодів).
-      Обробка запитів користувачів, що заходять на сайт.
-
-
-  * QR_app – Головний конфігураційний застосунок.
-    Мета: Центральний застосунок, який містить налаштування всього проєкту.
-    Призначення:
-      Налаштування Django (settings.py).
-      Опис маршрутів (urls.py).
-      Запуск сервера (wsgi.py, asgi.py).
-      Підключення бази даних та встановлення глобальних параметрів.
-
-  * QR_codes – Генерація та управління QR-кодами.
-    Мета: Генерація QR-кодів для різних даних.
-    Призначення:
-      Створення QR-кодів.
-      Відображення QR-кодів у браузері.
-      Збереження QR-кодів у базі даних або файловій системі.
-      Інтеграція з контактами (генерація QR-коду для контакту).
-
-
-## Модулі які ми використовували для розробки сайту:
-* Модуль Django
-* Модуль io
-* Модуль base64 
-* Модуль qrcode
-* Модуль matplotlib
-* Модуль os
-* Модуль pillow
-## we used these modules develop the site:
-* Module Django
-* Module io
-* Module base64
-* Module qrcode
-* Module matplotlib
-* Module os
-* Module pillow
+Figma: https://www.figma.com/design/i93LXgG1yKXwIIa6hViCPM/QR-app?node-id=0-1&p=f&t=Ld93imhMSqyJL6K8-0
 
 ---
-### Як запустити наш проєкт у роботу:
-* Скачайте проєкт с Github
-![alt text](image-1.png)
-
-* Відкрийте термінал та переїдіть у папку QR-app
-* Активуйте Віртуальне оточення:
-  * Windows
-    *  Створює віртуальне оточення : `python -m venv venv`
-    *  Активує віртуальне оточення: `venv\Scripts\activate.bat`
-  * Mac os:
-    * Створює віртуальне оточення : `python3 -m venv venv`
-    * `cd venv\bin`
-    * Активує віртуальне оточення: `source activate`
-    * `cd ../..` 
-
-* Пропишіть цю команду щоб встановити всі необхідні модулі: `pip install Django qrcode matplotlib pillow`
-* Після того як скачаете всі необхідні модулі, пропишіть у терміналі `python manage.py runserver`
-
-## How to get our project up and running
-- Download the project from Github
-![alt text](image-1.png)
-
-* Open the terminal and go to the QR-app folder
-* Activate the Virtual Environment:
-  * Windows
-    * Creates a virtual environment: `python -m venv venv`
-    * Activates the virtual environment: `venv\Scripts\activate.bat`
-  * Mac OS:
-    * Creates a virtual environment: `python3 -m venv venv`
-    * `cd venv\bin`
-    * Activates the virtual environment: `source activate`
-    * `cd ../..` 
-
-* Write this command to install all necessary modules: `pip install Django qrcode matplotlib pillow`
-* After downloading all the necessary modules, write `python manage.py runserver` or `python3 manage.py runserver` for mac os in the terminal
-
----
-
 ## Структура проекту / Project sctructure 
 
 ```mermaid
@@ -186,6 +112,152 @@ graph TD
   subs --> block.html
   subs --> index.html
 ```
+---
+
+
+## Детальне пояснення кожного застосунку:
+
+  * home - головна сторінка сайту.
+    Мета це забезпечення основної навігації по сайту та загальної інформації.
+    Призначення: 
+      Відображення головної сторінки.
+      Інтеграція з іншими застосунками (контакти, підписки, генерація QR-кодів).
+      Обробка запитів користувачів, що заходять на сайт.
+
+
+  * QR_app – Головний конфігураційний застосунок.
+    Мета: Центральний застосунок, який містить налаштування всього проєкту.
+    Призначення:
+      Налаштування Django (settings.py).
+      Опис маршрутів (urls.py).
+      Запуск сервера (wsgi.py, asgi.py).
+      Підключення бази даних та встановлення глобальних параметрів.
+
+  * QR_codes – Генерація та управління QR-кодами.
+    Мета: Генерація QR-кодів для різних даних.
+    Призначення:
+      Створення QR-кодів.
+      Відображення QR-кодів у браузері.
+      Збереження QR-кодів у базі даних або файловій системі.
+      Інтеграція з контактами (генерація QR-коду для контакту).
+  * User - Авторизація чи реєстрація користовуча.
+    Мета: Аутифікація кожного користувача, щоб до кожного можна було прив'язати підписку та інші дані  , 
+    Призначення:
+      Реестрація користувача.
+      Авторизація користувача.
+      Створення моделі Profile.
+  * Subscription - Зміна та покупка підписки. 
+    Мета: Щоб користувач міг змінювати підписку в залежності від тої кількості QR-codes які він хоче створити.
+    Призначення:
+      Зміна підписки.
+      Блокування QR-codes.
+  * Contacts - Він створений щоб користувач міг звязатись з адміністрацією
+    Мета: Щоб користувач міг звернутись до адміністрації з питанням чи з пропозицією
+    Призначення:
+    Коритувач може написати відгук.
+
+
+
+  ## Detailed explanation of each application:
+
+  * home - the main page of the site.
+    The purpose is to provide basic navigation on the site and general information.
+    Purpose: 
+      Display the main page.
+     Integration with other applications (contacts, subscriptions, QR code generation).
+      Processing requests from users entering the site.
+
+  * QR_app – Main configuration application.
+    Purpose: Central application that contains settings for the entire project.
+    Purpose:
+      Django configuration (settings.py).
+      Route description (urls.py).
+      Server startup (wsgi.py, asgi.py).
+      Database connection and global settings.
+
+  * QR_codes – QR code generation and management.
+    Purpose: QR code generation for various data.
+    Purpose:
+      QR code creation.
+      QR code display in the browser.
+      QR code storage in a database or file system.
+      Contacts integration (QR code generation for a contact).
+
+  * User - User authorization or registration.
+    Purpose: Authentication of each user so that subscription and other data can be linked to each, 
+    Purpose:
+      User registration.
+      User authorization.
+      Creation of the Profile model.
+
+  * Subscription - Change and purchase of subscription. 
+    Purpose: So that the user can change the subscription depending on the number of QR-codes he wants to create.
+    Purpose:
+      Change subscription.
+      Block QR-codes.
+  
+  * Contacts - It is created so that the user can contact the administration
+    Purpose: So that the user can contact the administration with a question or a suggestion
+    Purpose:
+      The user can write a review.
+---
+## Модулі які ми використовували для розробки сайту:
+* Модуль Django
+* Модуль io
+* Модуль base64 
+* Модуль qrcode
+* Модуль matplotlib
+* Модуль os
+* Модуль pillow
+## we used these modules develop the site:
+* Module Django
+* Module io
+* Module base64
+* Module qrcode
+* Module matplotlib
+* Module os
+* Module pillow
+
+---
+### Як запустити наш проєкт у роботу:
+* Скачайте проєкт с Github
+![alt text](image-1.png)
+
+* Відкрийте термінал та переїдіть у папку QR-app
+* Активуйте Віртуальне оточення:
+  * Windows
+    *  Створює віртуальне оточення : `python -m venv venv`
+    *  Активує віртуальне оточення: `venv\Scripts\activate.bat`
+  * Mac os:
+    * Створює віртуальне оточення : `python3 -m venv venv`
+    * `cd venv\bin`
+    * Активує віртуальне оточення: `source activate`
+    * `cd ../..` 
+
+* Пропишіть цю команду щоб встановити всі необхідні модулі: `pip install Django qrcode matplotlib pillow`
+* В user.json укажіть дані адміністратора якому плануєте написати 
+* Після того як скачаете всі необхідні модулі, пропишіть у терміналі `python manage.py runserver`
+
+## How to get our project up and running
+- Download the project from Github
+![alt text](image-1.png)
+
+* Open the terminal and go to the QR-app folder
+* Activate the Virtual Environment:
+  * Windows
+    * Creates a virtual environment: `python -m venv venv`
+    * Activates the virtual environment: `venv\Scripts\activate.bat`
+  * Mac OS:
+    * Creates a virtual environment: `python3 -m venv venv`
+    * `cd venv\bin`
+    * Activates the virtual environment: `source activate`
+    * `cd ../..` 
+
+* Write this command to install all necessary modules: `pip install Django qrcode matplotlib pillow` or use `pip3` for mac os
+* 
+* After downloading all the necessary modules, write `python manage.py runserver` or `python3 manage.py runserver` for mac os in the terminal
+
+
   <!-- 2  sc -->
   <!-- c  img[images] -->
   <!-- 2  img[images] -->
