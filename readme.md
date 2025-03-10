@@ -17,7 +17,6 @@ The project for creating QR codes is useful because it simplifies the exchange o
 Thanks to the user-friendly interface, QR codes are very easy to create. There is also a large amount of various customization.
 This project allows you to quickly, conveniently and securely transfer information, simplifying everyday processes for everyone!
 ---
-<!-- - [Project-sctructure](#структура-проекту--project-sctructure) -->
 ### Структура readme:
 - [Розробники цього сайту:](#розробники-цього-сайту)
 - [Модулі які ми використовували для розробки сайту](#модулі-які-ми-використовували-для-розробки-сайту)
@@ -25,14 +24,15 @@ This project allows you to quickly, conveniently and securely transfer informati
 - [Структура проекту](#структура-проекту--project-sctructure)
 - [Структура Приложений](#структура-приложений--apps-sctructure)
 - [Пояснення кожного застосунку](#детальне-пояснення-кожного-застосунку)
-<!-- Детальне пояснення кожного застосунку -->
 - [Описання всіх файлів](#описання-всіх-файлів)
 - [Висновок](#висновок)
 ### Organization readme:
 - [Developers of this site:](#developers-of-this-site)
 - [we used these modules develop the site](#we-used-these-modules-develop-the-site)
 - [How to get our project up and running](#how-to-get-our-project-up-and-running)
+- [Project-sctructure](#структура-проекту--project-sctructure)
 - [Apps sctructure](#структура-приложений--apps-sctructure)
+- [Explanation of each application](#detailed-explanation-of-each-application)
 - [Description of all files](#description-of-all-files)
 - [Conclusion](#conclusion)
 ---
@@ -157,8 +157,7 @@ graph TD
     Коритувач може написати відгук.
 
 
-
-  ## Detailed explanation of each application:
+## Detailed explanation of each application:
 
   * home - the main page of the site.
     The purpose is to provide basic navigation on the site and general information.
