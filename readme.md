@@ -236,6 +236,14 @@ graph TD
 * Пропишіть цю команду щоб встановити всі необхідні модулі: `pip install Django qrcode matplotlib pillow`
 * В user.json укажіть дані адміністратора якому плануєте написати 
 * Після того як скачаете всі необхідні модулі, пропишіть у терміналі `python manage.py runserver`
+* для комерційного використання виконайте наступне:
+  1. напишіть: `git clone https://github.com/IllyaEpik/QR-app`
+  2. встановіть «Working directory»: шлях до прикладу проекту: /home/name/QR-app
+  3. встановити статику: шлях до проекту та static, приклад: /home/name/QR-app/static і зробити це для медіа
+  4. потім перейдіть до файлу "settings.py"
+  5. DEBUG = False
+  6. ALLOWED_HOSTS = ["name.pythonanywhere.com"]
+  7. write:python QR-app/manage.py collectstatic
 
 ## How to get our project up and running
 - Download the project from Github
@@ -256,7 +264,14 @@ graph TD
 * In user.json, specify the details of the administrator you plan to write to.
 * After downloading all the necessary modules, write `python manage.py runserver` or `python3 manage.py runserver` for mac os in the terminal
 
-
+* for commercial use do the following:
+  1. write: `git clone https://github.com/IllyaEpik/QR-app`
+  2. set "Working directory": path to project exemple: /home/name/QR-app
+  3. set static: path to project plus static exemple /home/name/QR-app/static and do it for media
+  4. then go to the file "settings.py"
+  5. DEBUG = False
+  6. ALLOWED_HOSTS = ["name.pythonanywhere.com"]
+  7. write: python QR-app/manage.py collectstatic
   <!-- 2  sc -->
   <!-- c  img[images] -->
   <!-- 2  img[images] -->

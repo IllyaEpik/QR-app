@@ -15,7 +15,7 @@ from django.shortcuts import render, redirect
 # from .models import Subscription
 # from .forms import SubscriptionForm
 # from django.core.handlers.wsgi.WSGIRequest
-@login_required
+# @login_required
 # def subscribe(request):
 #     user_subscription, created = Subscription.objects.get_or_create(user=request.user)
 
@@ -26,6 +26,7 @@ from django.shortcuts import render, redirect
 #             return redirect("subscription_success")
 
 def create_qr_code(request:WSGIRequest,error = False):
+    
     filename = os.path.join(f"{request.user.username}/{request.POST.get('name')}.png")
     path = os.path.abspath(__file__+f'/../../media/images/qr_code/{filename}')
     file = None
@@ -152,12 +153,23 @@ def create_qr_code(request:WSGIRequest,error = False):
         filename = file
     return filename
 # Create your views here.
-@login_required  
+# @login_required  
 def render_create_qr_cods(request:WSGIRequest):
     error = ''
     name = None
-    profile = Profile.objects.get(user = request.user)
-    if request.method == "POST":
+    # print(request.user)
+    try:
+        profile = Profile.objects.get(user = request.user)
+        subscription = profile.subcription
+        QR = Profile.objects.get(user =  request.user).desktop_QR
+    except:
+        profile = None
+        subscription = None
+        QR = '0'
+    # auth = bool(profile)
+    # if auth == True:
+        
+    if request.method == "POST" and profile:
             print(request.POST.get('color'))
         # try:
             if len(QR_CODE.objects.filter(name = request.POST.get('name'),profile=request.user)):
@@ -198,10 +210,10 @@ def render_create_qr_cods(request:WSGIRequest):
         'error':error,
         'MEDIA_URL':MEDIA_URL,
         "url":url,
-        'subcription':profile.subcription,
-        'desktop_QR': Profile.objects.get(user =  request.user).desktop_QR
-    }) 
-@login_required
+        'subcription':subscription,
+        'desktop_QR': QR
+                }) 
+# @login_required
 def render_my_qr_cods(request:WSGIRequest):
     print(type(request))
     modal = None
