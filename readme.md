@@ -59,13 +59,13 @@ This project allows you to quickly, conveniently and securely transfer informati
 
 ---
 
-Figma: https://www.figma.com/design/i93LXgG1yKXwIIa6hViCPM/QR-app?node-id=0-1&p=f&t=Ld93imhMSqyJL6K8-0
+# [Figma](https://www.figma.com/design/i93LXgG1yKXwIIa6hViCPM/QR-app?node-id=0-1&p=f&t=Ld93imhMSqyJL6K8-0)
 
 ---
 ## Структура проекту / Project sctructure 
 
 ```mermaid
-graph TD
+graph
 
     C{QR-app}
     a{all apps}
@@ -96,7 +96,7 @@ graph TD
 ```
 ## Структура Приложений / apps sctructure 
 ```mermaid
-graph TD
+graph 
 
   s{Standart application structure}
   s --> f[files]
