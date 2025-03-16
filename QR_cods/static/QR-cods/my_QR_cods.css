@@ -1,8 +1,13 @@
-body {
+/* body {
     font-family: sans-serif;
     background-color: lightblue;
+} */
+*{
+    font-size: 30px;
 }
-
+.error{
+    text-align: center;
+}
 header {
     text-align: right;
 }
@@ -83,176 +88,180 @@ header{
 .url-to-create:hover {
     background-color: #7BA4E0;
     color: blue;
-
+    
 }
 
 /* /* .create-qr-code {
     background-color: #95B4E2;
     margin-left: 50px; 
-
-} */
-.text-for-QR-code{
-    width: 247;
-}
-.my-QR-code{
-    width: 200;
-    height: 200;
-}
-img {
-    width: 100px;
-    height: 100px;
-}
-a{
-    display: flex;
-    justify-content: center;
-    color: blue
-}
-.my-QR-cods{
-    background-color:  #21A0DF;
-    border: solid #21A0DF 1px;
-    border-radius: 100px;
     
-}
-button{
-    display: block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: hsl(0, 0%, 100%);
-    border: none;
-    border-radius: 5px;
-    font-size: 30px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover{
-    background-color: rgba(0, 0, 0, 0.75);
-    color: hsl(200, 100%, 80%);
-}
-.filter{
-    width: min-content;
+    } */
+    .text-for-QR-code{
+        width: 247;
+    }
+    .my-QR-code{
+        width: 200;
+        height: 200;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    a{
+        display: flex;
+        justify-content: center;
+        color: blue
+    }
+    .my-QR-cods{
+        background-color:  #21A0DF;
+        border: solid #21A0DF 1px;
+        border-radius: 100px;
+        
+    }
+    button{
+        display: block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: hsl(0, 0%, 100%);
+        border: none;
+        border-radius: 5px;
+        font-size: 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover{
+        background-color: rgba(0, 0, 0, 0.75);
+        color: hsl(200, 100%, 80%);
+    }
+    .filter{
+        width: min-content;
+        
+    }
+    .hidden{
+        /* visibility: hidden; */
+        display: none;
+    }
+    .filter-div{
+        display: flex;
+        
+    }
+    input, textarea{
+        margin: 0;
+        display: block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: hsl(0, 0%, 100%);
+        border: none;
+        border-radius: 5px;
+        font-size: 30px;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+    .modal-bg {
+        background: black;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+        z-index: 1;
+    }
     
-}
-.hidden{
-    /* visibility: hidden; */
-    display: none;
-}
-.filter-div{
-    display: flex;
+    .modal{
+        position: fixed;
+        background-color: white;
+        /* width: 600px; */
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        border-radius:10px;
+        padding: 10px;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s;
+        z-index: 2;
+        background: linear-gradient(to left, #a1bbfd, #ffffff);
+    }
+    .mix{
+        display:flex;
+    }
+    .close{
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        position:absolute;
+        top:10px;
+        right:10px ; 
+    }
     
-}
-input, textarea{
-    margin: 0;
-    display: block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: hsl(0, 0%, 100%);
-    border: none;
-    border-radius: 5px;
-    font-size: 30px;
-    border-radius: 25px;
-    transition: 0.3s;
-}
-.modal-bg {
-    background: black;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-    z-index: 1;
-}
-
-.modal{
-    position: fixed;
-    background-color: white;
-    /* width: 600px; */
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    border-radius:10px;
-    padding: 10px;
-    text-align: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s;
-    z-index: 2;
-    background: linear-gradient(to left, #a1bbfd, #ffffff);
-}
-.mix{
-    display:flex;
-}
-.close{
-    font-size: 24px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
-    top:10px;
-    right:10px ; 
-}
-
-.modal-bg.show{
-    opacity: 0.6;
-    visibility: visible;
-}
-
-.modal.show{
-    visibility: visible;
-    opacity: 1;
-}
-.date{
+    .modal-bg.show{
+        opacity: 0.6;
+        visibility: visible;
+    }
     
-    margin-left: auto;
-    margin-right: auto
-}
-.wal{
-    display: flex;
-    flex-direction: row-reverse;
-    height: fit-content;
-}
-.save{
-    color: aquamarine;
-    margin-left: auto;
-    margin-right: auto;
+    .modal.show{
+        visibility: visible;
+        opacity: 1;
+    }
+    .date{
+        
+        margin-left: auto;
+        margin-right: auto
+    }
+    .wal{
+        display: flex;
+        flex-direction: row-reverse;
+        height: fit-content;
+    }
+    .save{
+        color: aquamarine;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
     
-}
-
-/* .filter-div{
-    display: flex;
-    gap: 10px;
-    margin-top: 150px;
-    margin-left: 500px;
-} */
-.delete{
-    display: flex;
-    align-items: center;
-    color: #850000;
-}
-.delete:hover{
-    color: hsl(0, 100%, 50%);
-}
-.download{
-    color: #ffffff;
-}
-.my-QR-cods{
-    background-color:  #21A0DF;
-    border: solid #21A0DF 1px;
-    border-radius: 100px;
-}
-span{
-    font-size: 40px;
-}
-.block-True{
-    /* background-color: rgba(255, 255, 125, 0.5); */
-    /* border: red solid 5px; */
-    color: red;
-}
-.desktop-True{
-    background-color: rgba(255, 255, 255, 0.75);
-
-}
+    /* .filter-div{
+        display: flex;
+        gap: 10px;
+        margin-top: 150px;
+        margin-left: 500px;
+        } */
+        .delete{
+            display: flex;
+            align-items: center;
+            color: #850000;
+        }
+        .delete:hover{
+            color: hsl(0, 100%, 50%);
+        }
+        .download{
+            color: #ffffff;
+        }
+        .my-QR-cods{
+            background-color:  #21A0DF;
+            border: solid #21A0DF 1px;
+            border-radius: 100px;
+        }
+        span{
+            font-size: 40px;
+        }
+        .block-True{
+            /* background-color: rgba(255, 255, 125, 0.5); */
+            /* border: red solid 5px; */
+            color: red;
+        }
+        .desktop-True{
+            background-color: rgba(255, 255, 255, 0.75);
+            
+        }
+        #ok{
+            text-align: left;
+            display:contents;
+        }

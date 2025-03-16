@@ -17,7 +17,7 @@
                         <p class="logo">{{ request.user.username }}</p>
                         <a href="{% url 'logout' %}" class="logout">logout</a>
                     {% else %}
-                        <a href="{% url 'reg' %}" class="login">login</a>
+                        <a href="{% url 'auth' %}" class="login">login</a>
                     {% endif %}
                 {% endblock %}
             </div>

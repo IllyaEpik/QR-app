@@ -217,7 +217,10 @@ def render_create_qr_cods(request:WSGIRequest):
 def render_my_qr_cods(request:WSGIRequest):
     print(type(request))
     modal = None
-    qr_codes = QR_CODE.objects.filter(profile = request.user)
+    pk = request.user.pk
+    qr_codes = []
+    if pk:
+        qr_codes = QR_CODE.objects.filter(profile = request.user)
     if request.method == "POST":
         if not request.POST.get("name"):
 
@@ -244,7 +247,8 @@ def render_my_qr_cods(request:WSGIRequest):
     return render(request, template_name='my_QR_cods.html',context={
         'qr_codes':qr_codes,
         'MEDIA_URL':MEDIA_URL,
-        'modal': modal
+        'modal': modal,
+        'pk':pk
 
     })
 

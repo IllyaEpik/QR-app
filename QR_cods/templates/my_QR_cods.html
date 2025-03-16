@@ -6,9 +6,14 @@
 {% endblock %}
 {% block content %}
 
-<body>
-    <main>
-        <h1>my QR-codes</h1>
+<main>
+    <h1>my QR-codes</h1>
+    {% if not subcription %}
+    <p class="error" style="color: red;">You cannot view your QR codes if you aren't logged in.</p>
+    <p class="error">Login: 
+        <a href="{% url 'auth' %}" id="ok">here</a>
+    </p>
+    {% endif  %}
         
         <div class="filter-div">
             <input type="text" placeholder="Enter QR name">
@@ -66,5 +71,4 @@
             <a href="{% url 'create_qr_cods' %}" class="go">create QR-code</a>
         </button>
     </main>
-</body>
 {% endblock %}

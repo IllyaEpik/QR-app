@@ -6,6 +6,9 @@ let back = document.querySelector('.back')
 let select = document.querySelector('.custom-select')
 let type = document.querySelector('.type-of-qr')
 let block = document.querySelector('.block')
+
+// let main = document.querySelector('main')
+// main.classList.add('opasity')
 block.style.width = select.clientWidth*1.1
 for (let c of color1){
     c.style.width = name1.clientWidth/3

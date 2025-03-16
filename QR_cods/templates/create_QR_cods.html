@@ -8,11 +8,14 @@
 
 <h1>Create QR-codes</h1>
 <form method="post" enctype="multipart/form-data">
-    {% if subcription %}
-        
+    {% if not subcription %}
+        <p style="color: red;">You cannot create a QR code if you aren't logged in.</p>
+        <p>Login: 
+            <a href="{% url 'auth' %}" >here</a>
+        </p>
     {% endif  %}
     {% csrf_token %}
-    <main>
+    <main >
         <div class="buttons">
             <input type="text" placeholder="url" required name="url">
             <input type="text" placeholder="name" required name="name">
