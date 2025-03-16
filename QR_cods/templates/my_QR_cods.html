@@ -8,11 +8,11 @@
 
 <main>
     <h1>my QR-codes</h1>
-    {% if not subcription %}
-    <p class="error" style="color: red;">You cannot view your QR codes if you aren't logged in.</p>
-    <p class="error">Login: 
-        <a href="{% url 'auth' %}" id="ok">here</a>
-    </p>
+    {% if not pk %}
+        <p class="error" style="color: red;">You cannot view your QR codes if you aren't logged in.</p>
+        <p class="error">Login: 
+            <a href="{% url 'auth' %}" id="ok">here</a>
+        </p>
     {% endif  %}
         
         <div class="filter-div">
