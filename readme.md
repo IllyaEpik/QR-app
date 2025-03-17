@@ -65,7 +65,7 @@ This project allows you to quickly, conveniently and securely transfer informati
 ## Структура проекту / Project sctructure 
 
 ```mermaid
-graph
+graph 
 
     C{QR-app}
     a{all apps}
@@ -96,7 +96,7 @@ graph
 ```
 ## Структура Приложений / apps sctructure 
 ```mermaid
-graph 
+graph
 
   s{Standart application structure}
   s --> f[files]
@@ -284,218 +284,53 @@ graph
 
 
 
-# Описання всіх файлів 
-  ### Qr_cods/views.py
-  --- У цьому файлі ми створюємо функції відображення Qr-codes(render_create_qr_cods, render_my_qr_cods), а також ми створили функцію для створення Qr-codes (create_qr_code)
-  ### Qr_cods/urls.py
-  --- У ньому ми створюємо url ссилки для сайтуу
-  ### QR_cods/tests.py
-  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
-  ### QR_cods/models.py
-  --- У ньому ми створюємо модель QR_CODE
-  ### QR_cods/apps.py
-  ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
-  ### QR_coda/admin.py
-  --- використовується для відображення ваших моделей на панелі адміністратора Django
-  ### QR_cods/__init__.py
-  --- Цей файл ми не використовували
-  ### QR_cods/templates/create_QR_cods.html
-  --- У цьому файлі ми створюємо сторінку Create QR-codes
-  ### QR_cods/templates/my_QR_cods.html
-  --- У цьому файлі ми створюємо сторінку My QR-code
-  ### QR_cods/static/QR-cods/create_QR_cods.css
-  --- У цьому файлі ми задаемо вигляду сторінці Create QR-codes
-  ### QR_cods/static/QR-cods/create.js
-  --- У ньому ми створюємо "логіку" сторінці Create QR-codes
-  ### QR_cods/static/QR-cods/my_QR_cods.css
-  --- У цьому файлі ми задаемо вигляду сторінці My QR-codes
-  ### QR_cods/static/QR-cods/my.js
-  --- У ньому ми створюємо "логіку" сторінці My QR-codes
-  ## home/views.py
-  --- У цьому файлі ми створюємо функції відображення view_home
-  ## home/tests.py
-  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
-  ## home/models.py
-  --- Тут ми нічого не створювали 
-  ## home/apps.py
-  ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
-  ## home/admin.py
-  --- використовується для відображення ваших моделей на панелі адміністратора Django
-  ## home/init.py
-  --- Цей файл ми не використовували
-  ## home/templates/index.html
-  --- У цьому файлі ми створюємо сторінку home
-  ## home/static/home/style.css
-  --- У цьому файлі ми задаемо вигляду сторінці home
+# Описання всіх фунцій 
+  --- 
+  * [QR_cods/views.py](QR_cods/views.py)
+    * У цьому файлі ми створюємо 3 функції(create_qr_code,render_create_qr_cods,render_my_qr_cods)
+      * Create_qr_code - ця функція відповідае за створення різних типів QR_codes(градіентних, десктопних, кольорових, а також не десктопних), а також перевіряе яку кнопку натиснув користувач(check, create) якщо користувач натиснув create то цей QR_code зберігаеться у BD
 
-  ## contacts/views.py
-  --- У цьому файлі ми створюємо функції відображення view_contact
-  ## contacts/tests.py
-  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
-  ## contacts/models.py
-  --- Тут ми нічого не створювали 
-  ## contacts/apps.py
-  ---Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
-  ## contacts/admin.py
-  --- використовується для відображення ваших моделей на панелі адміністратора Django, але його ми не використовували
-  ## contacts/init.py
-  --- Цей файл ми не використовували
-  ## contacts/templates/contacts/index.html
-  --- У цьому файлі ми створюємо сторінку home
-  ## contacts/static/contacts/style.css
-  --- У цьому файлі ми задаемо вигляду сторінці home
-
-
-  ## user/views.py
-  --- У цьому файлі ми створюємо функції відображення authorization,registration, logout_user
-  ## user/admin.py
-  --- використовується для відображення ваших моделей на панелі адміністратора Django
-  ## user/apps.py
-  --- Этот файл определяет конфигурацию приложения и используется Django для его инициализации. Также мы создали класс SubscriptionConfig, этот класс описывает конфигурацию приложения Django.
-  ## user/models.py
-  --- У цьому файлі ми сворюємо модель Profile
-  ## user/tests.py
-  --- Цей файл ми не використовували, але ящо ви плануєте використовували він викорстовується для тестів
-  ## user/urls.py
-  --- У ньому ми створюємо url ссилки для сайту
-  ## user/templates/user/authorization.html
-  --- У цьому файлі ми створюємо сторінку авторизації
-  ## user/templates/user/registration.html
-  --- У цьому файлі ми створюємо сторінку регистрации 
-  ## user/static/user/style.css
-  --- У цьому файлі ми задаемо вигляду сторінці авторизації
-  ## user/static/user/style1.css
-  ---У цьому файлі ми задаемо вигляду сторінці реєстрації
-## /manage.py
---- Файл /manage.py є основним командним сценарієм проекту Django. 
-Запускає локальний сервер, виконує міграції бази даних. Це ключовий інструмент для управління проектами Django!
-## templates/base.html
----base.html у вашому проекті є базовим шаблоном для всіх сторінок HTML. Який використовується в Django для організації та повторного використання структури веб-сторінок.
-
-## .gitignore
----Файл .gitignore використовується для ігнорування певних файлів і папок під час завантаження проекту в Git.
-
-## db.sqlite3
---Файл db.sqlite3 — це база даних SQLite, яка використовується Django за замовчуванням. Він захищає всі дані вашого проекту (користувачі, записи, моделі). --SQLite — це легка база даних, яка не потребує налаштування сервера, використовується для локальної розробки та тестування.
-
-
-
-  
+	  
+        ```py
+        # Так створюються градіентні QR-codes:
+        for h in range(size):
+          for w in range(size):
+              # перевірка чи піксель не фоновий колір
+              if img.getpixel((w,h)) == color3:
+                  # обчислення червоного кольору
+                  r = int(color1[0] + (color2[0] - color1[0]) * w / size)
+                  # обчислення зеленого кольору
+                  g = int(color1[1] + (color2[1] - color1[1]) * w / size)
+                  # обчислення синього кольору
+                  b = int(color1[2] + (color2[2] - color1[2]) * w / size)
+                  # заміна пікселя
+                  img.putpixel((w,h),(r,g,b))
+        ```
+      * render_create_qr_cods- ця функція відповідае за те що чи зареестрований користувач, а також перевіряє підписку користувача а також чи може користувач створювати QR-codes
+      Render_my_qr_cods - ця функція получае всі QR_codes щоб їх віобразити на сторінці , а також перевіряе що хоче зробити користувач(Видалити, скачати, змінити дані про цей QR-codes)
+  * [subscriptions/views.py](subscriptions/views.py)
+    * у цьому файлі ми створили 2 функції(redirection, view_subscription)
+      * redirection - ця функція відповідае за переодресацію с QR-code яку вказав користувач
+      
+        ```python
+        def redirection(request:WSGIRequest, qr_id):
+          qr = QR_CODE.objects.get(id = qr_id)
+          if qr.blocked:
+            return render(request, template_name='subscriptions/block.html')
+          else:
+            try:
+              return redirect(qr.url)
+            except:
+              return render(request,'subscriptions/copy.html', {'url':qr.url})
+        ```
+      * view_subscription - ця функція відповідае за зміну підписки, а також за блокування QR-codes 
+    
 # Description of all files:
-
-  ### subcriptions/views.py
-  --- Цей код містить дві функції відображення view_subscription(request:WSGIRequest):, які відповідають за обробку підписок користувачів, а також ми створили функцію redirection(request: WSGIRequest, qr_id): ця функція виконує перенаправлення корис
-  ### subscription/apps.py
-  --- This file defines the configuration of the application and is used by Django to initialize it. We also made the SubscriptionConfig class, this class describes the configuration of the Django application
-  ### subscription/tests.py
-  --- We didn`t use this file, but if you plan to use it, then it is used to made for tests.
-  ### subscription/models.py
-  --- We didn`t use this file in subcription, but if you plan to use it, then it is used to create models. 
-  ### subscription/templates
-  --- All HTML templates and page structure are located here.
-  ### subscription/static 
-  --- All static files, styles for html, and Java script are located here.
-  ### subscription/static/script.js
-  --- In this file we create the logic for our "Subscribe" page.
-  ### Qr_codes/views.py
-  ------ For this file we have created a function for rendering Qr-codes (render_create_qr_cods, render_my_qr_cods), and we have also created a function for creating Qr-codes (create_qr_code)
-  ### Qr_codes/urls.py
-  --- We are creating URL links for the site
-  ### QR_codes/tests.py
-  --- We didn't use this file, but if you plan to use it, it is used for tests.
-  ### QR_codes/models.py
-  --- In it we create the QR_CODE model
-  ### QR_codes/apps.py
-  ---This file defines the configuration of the application and is used by Django to initialize itself. We also created the SubscriptionConfig class, this class describes the configuration of the Django application
-  ### QR_codes/admin.py
-  --- used to display your models in the Django admin panel
-  ### QR_cods/ __init__.py
-  --- We did not use this file
-  ### QR_cods/templates/create_QR_cods.html
-  --- In this file we create the Create QR-codes page
-  ### QR_cods/templates/my_QR_cods.html
-  --- In this file we create the My QR-code page
-  ### QR_cods/static/QR-cods/create_QR_cods.css
-  --- In this file we set the appearance of the Create QR-codes page
-  ### QR_cods/static/QR-cods/create.js
-  --- In it we create the "logic" of the Create QR-codes page
-  ### QR_cods/static/QR-cods/my_QR_cods.css
-  --- In this file we set the appearance of the My QR-codes page
-  ### QR_cods/static/QR-cods/my.js
-  --- In it we create the "logic" of the My QR-codes page
-
-  ## home/views.py
-  --- In this file we create the view_home display functions
-  ## home/tests.py
-  --- We did not use this file, but if you plan to use it, it is used for tests
-  ## home/models.py
-  --- We did not create anything here 
-  ## home/apps.py
-  ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
-  ## home/admin.py
-  --- used to display your models in the Django admin panel
-  ## home/init.py
-  --- We did not use this file
-  ## home/templates/index.html
-  --- In this file we create the home page
-  ## home/static/home/style.css
-  --- In this file we set the look of the home page
-  ## contacts/views.py
-  --- In this file we create the view_contact display functions
-  ## contacts/tests.py
-  --- We did not use this file, but if you plan to use it, it is used for tests
-  ## contacts/models.py
-  --- We did not create anything here 
-  ## contacts/apps.py
-  ---This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the Django application configuration.
-  ## contacts/admin.py
-  --- used to display your models in the Django admin panel, but we didn't use it
-  ## contacts/init.py
-  --- We didn't use this file
-  ## contacts/templates/contacts/index.html
-  --- In this file we create the home page
-  ## contacts/static/contacts/style.css
-  --- In this file we set the look of the home page
-
-  ## user/views.py
-  --- In this file we create the authorization,registration,logout_user view functions
-  ## user/admin.py
-  --- used to display your models in the Django admin panel
-  ## user/apps.py
-  --- This file defines the application configuration and is used by Django to initialize it. We also created the SubscriptionConfig class, this class describes the configuration of the Django application.
-  ## user/models.py
-  --- In this file we create the Profile model
-  ## user/tests.py
-  --- We did not use this file, but if you plan to use it, it is used for tests
-  ## user/urls.py
-  --- In it we create a url link for the site
-  ## user/templates/user/authorization.html
-  --- In this file we create an authorization page
-  ## user/templates/user/registration.html
-  --- In this file we create a registration page 
-  ## user/static/user/style.css
-  --- In this file we set the appearance of the authorization page
-  ## user/static/user/style1.css
-  --- In this file we set the appearance of the registration page
-
-## templates/base.html
-base.html file in your project is the base template for all HTML pages. Which is used in Django to organize and reuse the structure of web pages.
-
-## .gitignore
-.gitignore file is used to ignore certain files and folders when uploading a project to Git.
-
-## db.sqlite3
-db.sqlite3 file is the SQLite database used by Django by default. It protects all the data of your project (users, records, models). SQLite is a lightweight database that does not require server configuration, used for local development and testing.
-
-
-## /manage.py
-The /manage.py file is the main command script of the Django project. 
-Starts the local server, performs migrations database. This is the key tool for Django project management!
 
 ---
 
 # Висновок
-Отже, у цьому проєкті ми навчилися працювати з Django, створювати та налаштовувати QR-коди, а також ефективно використовувати їх як у звичайному режимі, так і у десктопному. Ми вдосконалили свої навички роботи з медіафайлами, навчились правильно їх обробляти та інтегрувати в проєкт. Окрім цього, ми освоїли методи блокування Qr-codes. А також навчилися робити QR-codes градіентими. Складнощі виникали при створені градіентних QR-codes, а також виникали складнощі при ствоені десктопних QR-codes. Перспективи в цьогу додатку великі, тому що зараз це має попит. В нього ще можна додати одноразові QR-codes, а також зробити так щоб в одному QR-code було декілька ссилок, зробити пароль доя Qr-codes 
+Отже, у цьому проєкті ми навчилися працювати з Django, створювати та налаштовувати QR-коди, а також ефективно використовувати їх як у звичайному режимі, так і у десктопному. Ми вдосконалили свої навички роботи з медіафайлами, навчились правильно їх обробляти та інтегрувати в проєкт. Окрім цього, ми освоїли методи блокування Qr-codes. А також навчилися робити QR-codes градіентими. Складнощі виникали при створені градіентних QR-codes, а також виникали складнощі при ствоені десктопних QR-codes. Перспективи в цьогу додатку великі, тому що зараз це має попит. В нього ще можна додати одноразові QR-codes, а також зробити так щоб в одному QR-code було декілька ссилок, зробити пароль для Qr-codes 
 
 
 # Conclusion

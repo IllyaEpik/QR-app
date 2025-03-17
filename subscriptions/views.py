@@ -32,7 +32,6 @@ def view_subscriptions(request:WSGIRequest):
                         qr.blocked = True
                         qr.save()
             else:
-                print(sub.split(';')[1])
                 profile.desktop_QR += int(sub.split(';')[1])
             profile.card_number = request.POST.get('card')
             profile.CVV = request.POST.get('CVV')
@@ -45,7 +44,6 @@ def view_subscriptions(request:WSGIRequest):
         subscription = Profile.objects.get(user=request.user).subcription
     return render(request,template_name= "subscriptions/index.html", context={'subscription':subscription})
 def redirection(request:WSGIRequest, qr_id):
-    print(QR_CODE.objects.get)
     qr = QR_CODE.objects.get(id = qr_id)
     if qr.blocked:
         return render(request, template_name='subscriptions/block.html')
