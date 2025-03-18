@@ -33,10 +33,10 @@ def view_subscriptions(request:WSGIRequest):
                         qr.blocked = True
                         qr.save()
             else:
+                # desktop_QR
                 profile.desktop_QR += int(sub.split(';')[1])
             profile.card_number = request.POST.get('card')
             profile.CVV = request.POST.get('CVV')
-            # desktop_QR
             profile.save()
             
         else:
