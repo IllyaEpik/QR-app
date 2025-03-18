@@ -326,7 +326,44 @@ graph
       * view_subscription - ця функція відповідае за зміну підписки, а також за блокування QR-codes 
     
 # Description of all files:
+* [QR_cods/views.py](QR_cods/views.py)
+  * We can create 3 functions for this file (create_qr_code,render_create_qr_cods,render_my_qr_cods)
+  * Create_qr_code - this function supports the creation of different types of QR_codes (gradient, desktop, color, and also non-desktop), as well as checking the button by pressing the button (check, create) as well as by pressing create. QR_code is saved by BD
 
+
+    ```py
+    # This is how gradient QR codes are created:
+    for h in range(size):
+    for w in range(size):
+    # check whether pixel is not background color
+    if img.getpixel((w,h)) == color3:
+    # calculation of the red color
+    r = int(color1[0] + (color2[0] - color1[0]) * w / size)
+    # calculation of green color
+    g = int(color1[1] + (color2[1] - color1[1]) * w / size)
+    # count blue color
+    b = int(color1[2] + (color2[2] - color1[2]) * w / size)
+    # pixel replacement
+    img.putpixel((w,h),(r,g,b))
+    ```
+  * render_create_qr_cods - this function is responsible for you can register a customer, and also check the subscription of a customer, and you can also create QR-codes for a customer
+  Render_my_qr_cods - this function receives all QR_codes in order to display them on the page, and also checks what you want to create a user account (View, download, change data about these QR-codes)
+* [subscriptions/views.py](subscriptions/views.py)
+  * For this file we have created 2 functions (redirection, view_subscription)
+  * redirection - this function Please note for redirection from QR-code by entering your account
+
+    ```python
+    def redirection(request:WSGIRequest, qr_id):
+    qr = QR_CODE.objects.get(id = qr_id)
+    if qr.blocked:
+    return render(request, template_name='subscriptions/block.html')
+    else:
+    try:
+    return redirect(qr.url)
+    except:
+    return render(request,'subscriptions/copy.html', {'url':qr.url})
+    ```
+  * view_subscription - this function confirms for changing the subscription, as well as for blocking QR-codes
 ---
 
 # Висновок
