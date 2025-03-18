@@ -4,13 +4,14 @@ from django.shortcuts import redirect
 from django.core.handlers.wsgi import WSGIRequest
 from  QR_cods.models import QR_CODE
 
-
+# Перевіряе кількість QR-codes яких може створити користувач
 ok = {
     'standart':10,
     'pro':100,
     'free':1
 }
-# Create your views here.
+
+# Створюемо функцію view_subscriptions
 def view_subscriptions(request:WSGIRequest):
     global ok
     subscription = 'none'
@@ -43,8 +44,10 @@ def view_subscriptions(request:WSGIRequest):
     if request.user.username:
         subscription = Profile.objects.get(user=request.user).subcription
     return render(request,template_name= "subscriptions/index.html", context={'subscription':subscription})
+
 def redirection(request:WSGIRequest, qr_id):
     qr = QR_CODE.objects.get(id = qr_id)
+    # В залежності яка в користувача підписка перевіряе чи потрібно блокувати QR-code
     if qr.blocked:
         return render(request, template_name='subscriptions/block.html')
     else:
