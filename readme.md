@@ -20,7 +20,7 @@ This project allows you to quickly, conveniently and securely transfer informati
 ---
 ### Структура readme:
 - [Розробники цього сайту:](#розробники-цього-сайту)
-- [Модулі які ми використовували для розробки сайту](#модулі-які-ми-використовували-для-розробки-сайту)
+- [Технології які ми використовували для розробки сайту](#технології-які-ми-використовували-для-розробки-сайту)
 - [Як запустити наш проєкт у роботу](#як-запустити-наш-проєкт-у-роботу)
 - [Структура проекту](#структура-проекту--project-sctructure)
 - [Структура Приложений](#структура-приложений--apps-sctructure)
@@ -29,7 +29,7 @@ This project allows you to quickly, conveniently and securely transfer informati
 - [Висновок](#висновок)
 ### Organization readme:
 - [Developers of this site:](#developers-of-this-site)
-- [we used these modules develop the site](#we-used-these-modules-develop-the-site)
+- [we used these technologies develop the site](#we-used-these-technologies-develop-the-site)
 - [How to get our project up and running](#how-to-get-our-project-up-and-running)
 - [Project-sctructure](#структура-проекту--project-sctructure)
 - [Apps sctructure](#структура-приложений--apps-sctructure)
@@ -66,7 +66,7 @@ This project allows you to quickly, conveniently and securely transfer informati
 ## Структура проекту / Project sctructure 
 
 ```mermaid
-graph 
+graph TD 
 
     C{QR-app}
     a{all apps}
@@ -201,23 +201,28 @@ graph
     Purpose:
       The user can write a review.
 ---
-## Модулі які ми використовували для розробки сайту:
-* Модуль Django
-* Модуль io
-* Модуль base64 
-* Модуль qrcode
-* Модуль matplotlib
-* Модуль os
-* Модуль pillow
-## we used these modules develop the site:
-* Module Django
-* Module io
-* Module base64
-* Module qrcode
-* Module matplotlib
-* Module os
-* Module pillow
-
+## Технології які ми використовували для розробки сайту:
+* python
+  * Модуль Django
+  * Модуль io
+  * Модуль base64 
+  * Модуль qrcode
+  * Модуль matplotlib
+  * Модуль os
+  * Модуль pillow
+* js, html, css
+* data base, json
+## we used these technologies develop the site:
+* python
+  * Module Django
+  * Module io
+  * Module base64
+  * Module qrcode
+  * Module matplotlib
+  * Module os
+  * Module pillow
+* js, html, css
+* data base, json
 ---
 ### Як запустити наш проєкт у роботу:
 * Скачайте проєкт с Github
@@ -365,11 +370,59 @@ graph
         return render(request,'subscriptions/copy.html', {'url':qr.url})
     ```
   * view_subscription - this function confirms for changing the subscription, as well as for blocking QR-codes
+      ```py
+      # Блокування та розблокування QR-codes
+      
+      # Перебераемо всі QR-codes
+      for qr in QR_CODE.objects.filter(profile = request.user,desktop = False):
+          if count > 0:
+              count -= 1
+              if qr.blocked:
+                  # Розблоковуемо QR-code
+                  qr.blocked = False
+                  qr.save()
+          else:
+              # Блокуємо QR-code
+              qr.blocked = True
+              qr.save()
+      ```
+    
 ---
 
 # Висновок
-Отже, у цьому проєкті ми навчилися працювати з Django, створювати та налаштовувати QR-коди, а також ефективно використовувати їх як у звичайному режимі, так і у десктопному. Ми вдосконалили свої навички роботи з медіафайлами, навчились правильно їх обробляти та інтегрувати в проєкт. Окрім цього, ми освоїли методи блокування Qr-codes. А також навчилися робити QR-codes градіентими. Складнощі виникали при створені градіентних QR-codes, а також виникали складнощі при ствоені десктопних QR-codes. Перспективи в цьогу додатку великі, тому що зараз це має попит. В нього ще можна додати одноразові QR-codes, а також зробити так щоб в одному QR-code було декілька ссилок, зробити пароль для Qr-codes 
+Отже, у цьому проєкті ми навчилися працювати з Django, створювати та налаштовувати QR-коди, а також ефективно використовувати їх як у звичайному режимі, так і у десктопному. Ми вдосконалили свої навички роботи з медіафайлами, навчились правильно їх обробляти та інтегрувати в проєкт. Окрім цього, ми освоїли методи блокування QR-кодів, а також навчилися робити QR-коди градієнтними.
+
+Складнощі виникали при створенні градієнтних QR-кодів, а також при реалізації десктопного варіанту генерації кодів. Однак ці труднощі вдалося подолати завдяки глибшому вивченню роботи з програмуванням.
+
+Перспективи цього додатка великі, оскільки QR-коди широко використовуються у різних сферах – від маркетингу до безпеки. У майбутньому можна додати функцію створення одноразових QR-кодів, реалізувати можливість збереження кількох посилань в одному QR-коді, а також зробити систему захисту QR-кодів за допомогою пароля.
+
+Щодо вибору між JSON та базою даних як сховище даних,  ми вирішили використовувати базу даних, оскільки це забезпечує:
+
+Гнучкість – можна легко оновлювати, видаляти або редагувати збережені QR-коди.
+Захист і контроль доступу – бази даних дозволяють керувати правами доступу до інформації.
+Масштабованість – у разі зростання кількості користувачів та QR-кодів з базою даних простіше керувати великими обсягами даних.
+Зручність у пошуку – бази даних дозволяють швидко знаходити та фільтрувати QR-коди за різними параметрами, що було б складніше реалізувати з JSON.
+Таким чином, база даних стала більш надійним і зручним рішенням для нашого проєкту.
+
+Тож таким чином ми зробили додаток для створення QR-кодів, який дуже зручний та легкий у використанні.
 
 
 # Conclusion
-So, in this project we learned how to work with Django, create and configure QR codes, and use them effectively both in normal mode and on desktop devices. We improved our skills in working with media files, learned how to properly process and integrate them into the project. In addition, we mastered methods for blocking Qr-codes. We also learned how to make QR codes with gradients.Difficulties arose when creating gradient QR-codes, and also difficulties arose when creating desktop QR-codes. The prospects for this application are great, because now it is in demand. It is also possible to add disposable QR-codes, as well as make one QR-code have several links, make a password for Qr-codes
+So, in this project we learned how to work with Django, create and configure QR codes, and use them effectively both in regular and desktop mode. We improved our skills in working with media files, learned how to properly process and integrate them into the project. In addition, we mastered methods for blocking QR codes, and also learned how to make QR codes gradient.
+
+Difficulties arose when creating gradient QR codes, as well as when implementing the desktop version of code generation. However, these difficulties were overcome thanks to a deeper study of programming.
+
+The prospects for this application are great, since QR codes are widely used in various fields - from marketing to security. In the future, you can add the function of creating one-time QR codes, implement the ability to save multiple links in one QR code, and also make a system for protecting QR codes with a password.
+
+Regarding the choice between JSON and a database as a data storage, we decided to use a database because it provides:
+
+Flexibility - you can easily update, delete or edit saved QR codes.
+
+Access protection and control - databases allow you to manage access rights to information.
+
+Scalability - as the number of users and QR codes increases, it is easier to manage large amounts of data with a database.
+Searchability - databases allow you to quickly find and filter QR codes by various parameters, which would be more difficult to implement with JSON.
+
+Thus, the database became a more reliable and convenient solution for our project.
+
+So in this way we made an application for creating QR codes, which is very convenient and easy to use.

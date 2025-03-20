@@ -22,19 +22,22 @@ def view_subscriptions(request:WSGIRequest):
             if not ';' in sub:
                 profile.subcription = sub
                 count = ok[sub]
-                
+                # Перебераемо всі QR-codes
                 for qr in QR_CODE.objects.filter(profile = request.user,desktop = False):
                     if count > 0:
                         count -= 1
                         if qr.blocked:
+                            # Розблоковуемо QR-code
                             qr.blocked = False
                             qr.save()
                     else:
+                        # Блокуємо QR-code
                         qr.blocked = True
                         qr.save()
             else:
                 # desktop_QR
                 profile.desktop_QR += int(sub.split(';')[1])
+            # Зберігаемо CVV та Номер карти  в базі данимх
             profile.card_number = request.POST.get('card')
             profile.CVV = request.POST.get('CVV')
             profile.save()
